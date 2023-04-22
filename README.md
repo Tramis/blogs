@@ -1,2 +1,0 @@
-# blogs
-blog with mdbook

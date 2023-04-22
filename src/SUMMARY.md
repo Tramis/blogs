@@ -1,19 +1,13 @@
 # Summary
 
-- [开始](./开始.md)
-
----
+[From The Beginning](./from_the_beginning.md)
 
 - [fp](./fp.md)
-
   - [不动点组合子与阶乘函数](./不动点组合子与阶乘函数.md)
 
 - [伤寒杂病论](./伤寒杂病论.md)
-
   - [集中注意力](./集中注意力.md)
 
 ---
 
-# 测试测试
-
-- [test](./test.md)
+[TEST](./test.md)

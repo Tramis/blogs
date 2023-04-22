@@ -1,9 +1,10 @@
 [book]
 authors = ["tramis"]
 language = "zh"
-multilingual = false
+# multilingual = false
+discription = "wo cao ni ma"
 src = "src"
-title = "learning blogs"
+title = "Learning Blogs"
 
 [output.html]
 mathjax-support = true
