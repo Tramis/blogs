@@ -30,8 +30,6 @@
 
         <!-- Custom theme stylesheets -->
 
-        <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
     <div id="body-container">
@@ -146,7 +144,65 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="又是-lambda-wip"><a class="header" href="#又是-lambda-wip">又是 lambda (WIP)</a></h1>
+<p>时隔良久，又忙里偷闲捡起来这东西。</p>
+<p>看了<a href="https://thzt.github.io/2017/03/14/recursive-function-7/">这个博客</a>，感觉是很好的补充，又把没理解的东西捡起来试图理解一下。（也是在翻了这作者的博文之后，让我起了好好记录 <code>blog</code> 的念头。</p>
+<h2 id="解方程"><a class="header" href="#解方程">解方程</a></h2>
+<p>对于阶乘函数 <code>fact</code></p>
+<pre><code class="language-haskell">fact :: Int -&gt; Int
+fact n = case n of 
+  1 -&gt; 1
+  n -&gt; n * fact (n-1)
+</code></pre>
+<p>有一个问题是如何只用 lambda 演算来实现 <code>fact</code>。具体一点来说，需要在 <code>fact</code> 内部不能调用 <code>fact</code>  自身。</p>
+<p>一定程度上来说，这个要求是很直观的，因为在函数内部调用 <code>fact</code> 时，<code>fact</code> 自身还没定义完，怎么能够调用它呢？</p>
+<p>在上面提到的博文当中，该文作者视函数定义为一个方程（可能也确实是），<code>fact n</code> 后的等号 <code>=</code>，就是数学意义上的等号，等号两侧完全等价。</p>
+<p>如果能够利用这个方程，直接解出 <code>fact</code> 的定义，那么也就得到了 <code>fact</code> 的定义，绕过了先有鸡还是先有蛋的问题。</p>
+<h2 id="不动点"><a class="header" href="#不动点">不动点</a></h2>
+<p>中学数学里其实很直接少见到递归的概念，偶尔出现也只是出于数列题目，浮光掠影。</p>
+<p>然而哪怕只是很少出现，也有人已经把不动点的概念引入到各种高中教辅书里，配上标题：『不动点法求通项公式』，配图往往有两种，一种是一个螺旋状，另一种是折线。（折线的大概长这样）：</p>
+<pre><code class="language-ascii">       ▲
+       │
+       │
+       │
+       │
+       │                                                 xx
+       │                                                xx               lll
+       │                                              xx         lllllllll
+       │                                           xxx     llllll
+       │                                        xxx lllllll
+       │                                     llllllll
+       │                               lll▲─►l
+       │                         lllll┌───┘x
+       │                     lllll    ▲xxx
+       │                 lll┌────────►┘x
+       │             lllll  ▲      xxx
+       │         lllll      │    xx
+       │     lllll          │  xx
+       lllllll▲─────────────►xx
+lllllll│      │            xx
+l      │      │         xxx
+       │      │       xxx
+       │      │     xxx
+       │      │    xx         y=x
+       │      │  xx
+       │      │xx
+       │     x│x
+       │    xx│
+       │  xx  │
+───────┘xx────┴───────────────────────────────────────────────────────────────►
+      xx
+    xx │
+   x   │
+ xx    │
+</code></pre>
+<p>基本意思就是不动点随着数列趋于极限，将逐步收敛到一个“稳定”的定值。或者干脆就等于这个值，同时因为这个点很“稳定”，于是它不再往外跑，从而得到了一个解。</p>
+<p>那时候的理解很粗糙，没能真正弄懂极限与无穷。但是从利用这个工具解题的过程中还是获得了一点认知：谁掌握了不动点，谁就掌握了整个复杂过程的解。</p>
+<h2 id="怎么解方程"><a class="header" href="#怎么解方程">怎么解方程</a></h2>
+<p>上面提到的 <code>blog</code> 里，作者引用的是函数定义上的不动点，即若 <code>f(x)=x</code>，则 <code>x</code> 是 <code>f</code> 的一个不动点。但我觉得数列的例子可能更像一个算法，于是多写了几笔。</p>
+<p>言归正传。<code>blog</code> 中作者取 </p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
