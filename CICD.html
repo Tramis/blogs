@@ -151,6 +151,18 @@
 <p>先用 <code>actions-rs/install</code> 顶上，以后看看有没有更好的讲解。</p>
 <h2 id="好像没用"><a class="header" href="#好像没用">好像没用</a></h2>
 <p>这个包在第二次仍然重新编译了，似乎没有按他说的被加入 <code>Github cache</code>，难道这个过程也需要时间吗。</p>
+<h2 id="确实出问题了"><a class="header" href="#确实出问题了">确实出问题了</a></h2>
+<p>tragic.</p>
+<pre><code>&gt; Run actions-rs/install@v0.1.2
+&gt; Tool cache is explicitly enabled via the Action input
+&gt; Downloading from the tool cache
+  Newest mdbook-katex version available at crates.io: 0.4.0
+  Downloading mdbook-katex signature into /tmp/mdbook-katex.zip.sig
+  Warning: Unable to download mdbook-katex == latest from the tool cache: Error: Unexpected HTTP response: 403
+&gt; Falling back to the `cargo install` command
+</code></pre>
+<p>看这 <code>repo</code> 的 <code>issue</code> 里边好像说不会修这个 <code>bug</code>。上次 <code>commit</code> 都是 3 年前了，令人感叹。</p>
+<p>还是得每次编译一下，麻。有时间还是自己研究一下 <code>workflow</code></p>
 
                     </main>
 

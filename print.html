@@ -157,7 +157,12 @@
 <p>行这逆水行舟之事挫人心志，左看右看不知深处，打道回府舍不得一身长衫，浑浑厄厄竟然不知岁月，转头一看什么也没有留下。</p>
 <p>为了学习好吗，对它使用 <code>blog</code> 吧。</p>
 <h2 id="哗啦哗啦"><a class="header" href="#哗啦哗啦">哗啦哗啦</a></h2>
-<p><code>mdbook</code> 默认的公式是 <code>mathjax</code>。这个 <code>blog</code> 感觉尽量不要把数学的东西丢进来，但等下还是看看 <code>preprocess</code>，把 <code>mathjax</code> 换成 <code>katex</code>，以及 <code>markdown</code> 看看有没有 <code>CICD</code> 支持的 <code>lint</code>。</p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+<code>mdbook</code> 默认的公式是 <code>mathjax</code>。这个 <code>blog</code> 感觉尽量不要把数学的东西丢进来，但等下还是看看 <code>preprocess</code>，把 <code>mathjax</code> 换成 <code>katex</code>，以及</li>
+<li><input disabled="" type="checkbox"/>
+<code>markdown</code> 看看有没有 <code>CICD</code> 支持的 <code>lint</code>。</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="fp"><a class="header" href="#fp">fp</a></h1>
 <blockquote>
@@ -229,6 +234,18 @@ l      │      │         xxx
 <p>先用 <code>actions-rs/install</code> 顶上，以后看看有没有更好的讲解。</p>
 <h2 id="好像没用"><a class="header" href="#好像没用">好像没用</a></h2>
 <p>这个包在第二次仍然重新编译了，似乎没有按他说的被加入 <code>Github cache</code>，难道这个过程也需要时间吗。</p>
+<h2 id="确实出问题了"><a class="header" href="#确实出问题了">确实出问题了</a></h2>
+<p>tragic.</p>
+<pre><code>&gt; Run actions-rs/install@v0.1.2
+&gt; Tool cache is explicitly enabled via the Action input
+&gt; Downloading from the tool cache
+  Newest mdbook-katex version available at crates.io: 0.4.0
+  Downloading mdbook-katex signature into /tmp/mdbook-katex.zip.sig
+  Warning: Unable to download mdbook-katex == latest from the tool cache: Error: Unexpected HTTP response: 403
+&gt; Falling back to the `cargo install` command
+</code></pre>
+<p>看这 <code>repo</code> 的 <code>issue</code> 里边好像说不会修这个 <code>bug</code>。上次 <code>commit</code> 都是 3 年前了，令人感叹。</p>
+<p>还是得每次编译一下，麻。有时间还是自己研究一下 <code>workflow</code></p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="多少沾点"><a class="header" href="#多少沾点">多少沾点</a></h1>
 <blockquote>
