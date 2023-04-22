@@ -1,4 +1,8 @@
-# 试试 `mdbook`
+# stealed foreword
+
+> The first laboratory session was devoted to finding out that developer feels slippery and that fixer smells awful.
+
+## 试试 `mdbook`
 
 `github pages` 好像静态网页都能托管。
 
