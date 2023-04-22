@@ -23,4 +23,6 @@ tragic.
 > Falling back to the `cargo install` command
 ```
 
-看这 `repo` 的 `issue` 里边好像说不会修这个 `bug`。上次 `commit` 都是 2020 年了，令人感叹。
+看这 `repo` 的 `issue` 里边好像说不会修这个 `bug`。上次 `commit` 都是 3 年前了，令人感叹。
+
+还是得每次编译一下，麻。有时间还是自己研究一下 `workflow`
