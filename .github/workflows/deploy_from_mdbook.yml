@@ -34,7 +34,7 @@ jobs:
         with:
           mdbook-version: "latest"
       - run:
-          cargo install mdbook-katex
+          cargo install mdbook-katex &&
           mdbook build . --dest-dir ./book # --dest-dir is relative to <dir>
 
       # Publish the static site to gh-pages branch.
