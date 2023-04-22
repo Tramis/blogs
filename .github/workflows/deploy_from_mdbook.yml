@@ -35,9 +35,11 @@ jobs:
           mdbook-version: "latest"
 
       - name: setup mdbook-katex
-        uses: magicgh/mdbook-katex-action@v1
+        uses: actions-rs/install@v0.1.2
         with:
-          version: 'latest'
+          crate: mdbook-katex
+          version: latest
+          use-tool-cache: true
 
       - run:
           mdbook build . --dest-dir ./book # --dest-dir is relative to <dir>
