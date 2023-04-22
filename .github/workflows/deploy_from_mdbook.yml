@@ -1,4 +1,5 @@
 # deploy from main to gh-pages
+# generate web pages from markdown files
 name: deploy_from_mdbook
 
 # Controls when the action will run. 
