@@ -33,7 +33,9 @@ jobs:
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: "latest"
-      - run: mdbook build . --dest-dir ./book # --dest-dir is relative to <dir>
+      - run:
+          cargo install mdbook-katex
+          mdbook build . --dest-dir ./book # --dest-dir is relative to <dir>
 
       # Publish the static site to gh-pages branch.
       - name: deploy

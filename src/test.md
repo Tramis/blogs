@@ -25,9 +25,9 @@ testing: **bold**
 
 ## katex
 
-testing: inline formula $\int_a^b f(x) dx = F(b) - F(a)$
+testing: inline formula: $\int_a^b f(x) dx = F(b) - F(a)$
 
-$$f g = g f g$$
+testing: block formula: $$f g = g f g$$
 
 ## code
 
