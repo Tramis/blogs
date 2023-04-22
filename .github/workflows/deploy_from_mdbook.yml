@@ -29,12 +29,19 @@ jobs:
       - uses: actions/checkout@v2
 
       # Build markdown files to a static site.
-      - name: setup mdBook
+      - name: setup mdbook
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: "latest"
+
+      - name: setup mdbook-katex
+        uses: actions-rs/install@v0.1.2
+        with:
+          crate: mdbook-katex
+          version: latest
+          use-tool-cache: true
+
       - run:
-          cargo install mdbook-katex
           mdbook build . --dest-dir ./book # --dest-dir is relative to <dir>
 
       # Publish the static site to gh-pages branch.
