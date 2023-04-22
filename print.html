@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="from_the_beginning.html">From The Beginning</a></li><li class="chapter-item expanded "><a href="fp.html"><strong aria-hidden="true">1.</strong> fp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="不动点组合子与阶乘函数.html"><strong aria-hidden="true">1.1.</strong> 不动点组合子与阶乘函数</a></li></ol></li><li class="chapter-item expanded "><a href="伤寒杂病论.html"><strong aria-hidden="true">2.</strong> 伤寒杂病论</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="集中注意力.html"><strong aria-hidden="true">2.1.</strong> 集中注意力</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="test.html">TEST</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="from_the_beginning.html">From The Beginning</a></li><li class="chapter-item expanded "><a href="fp.html"><strong aria-hidden="true">1.</strong> fp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="不动点组合子与阶乘函数.html"><strong aria-hidden="true">1.1.</strong> 不动点组合子与阶乘函数</a></li></ol></li><li class="chapter-item expanded "><a href="CICD.html"><strong aria-hidden="true">2.</strong> CICD</a></li><li class="chapter-item expanded "><a href="伤寒杂病论.html"><strong aria-hidden="true">3.</strong> 伤寒杂病论</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="集中注意力.html"><strong aria-hidden="true">3.1.</strong> 集中注意力</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="test.html">TEST</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,7 +154,7 @@
 <p><code>github pages</code> 好像静态网页都能托管。</p>
 <h2 id="呼呼呼"><a class="header" href="#呼呼呼">呼呼呼</a></h2>
 <p>学习，学个屁。真如漏勺兜水，前面学后面忘。</p>
-<p>行这逆水行舟之事真是挫人心志，左看右看不知深处，打道回府舍不得一身长衫，浑浑厄厄竟然不知岁月，转头一看什么也没有留下。</p>
+<p>行这逆水行舟之事挫人心志，左看右看不知深处，打道回府舍不得一身长衫，浑浑厄厄竟然不知岁月，转头一看什么也没有留下。</p>
 <p>为了学习好吗，对它使用 <code>blog</code> 吧。</p>
 <h2 id="哗啦哗啦"><a class="header" href="#哗啦哗啦">哗啦哗啦</a></h2>
 <p><code>mdbook</code> 默认的公式是 <code>mathjax</code>。这个 <code>blog</code> 感觉尽量不要把数学的东西丢进来，但等下还是看看 <code>preprocess</code>，把 <code>mathjax</code> 换成 <code>katex</code>，以及 <code>markdown</code> 看看有没有 <code>CICD</code> 支持的 <code>lint</code>。</p>
@@ -222,6 +222,13 @@ l      │      │         xxx
 <h2 id="怎么解方程"><a class="header" href="#怎么解方程">怎么解方程</a></h2>
 <p>上面提到的 <code>blog</code> 里，作者引用的是函数定义上的不动点，即若 <code>f(x)=x</code>，则 <code>x</code> 是 <code>f</code> 的一个不动点。但我觉得数列的例子可能更像一个算法，于是多写了几笔。</p>
 <p>言归正传。<code>blog</code> 中作者取 </p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="cicd"><a class="header" href="#cicd">CICD</a></h1>
+<p>看了半天 <code>github actions</code>，它这个 <code>reusable workflow</code> 是否有些难用。</p>
+<p>不同 <code>workflow</code> 之间的环境差异有点难以理解，如果环境不同，如何复用别的过程呢。</p>
+<p>先用 <code>actions-rs/install</code> 顶上，以后看看有没有更好的讲解。</p>
+<h2 id="好像没用"><a class="header" href="#好像没用">好像没用</a></h2>
+<p>这个包在第二次仍然重新编译了，似乎没有按他说的被加入 <code>Github cache</code>，难道这个过程也需要时间吗。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="多少沾点"><a class="header" href="#多少沾点">多少沾点</a></h1>
 <blockquote>
