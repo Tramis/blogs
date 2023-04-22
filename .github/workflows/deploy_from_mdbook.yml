@@ -1,5 +1,6 @@
 # deploy from main to gh-pages
 # generate web pages from markdown files
+# it seems that files still need to be deployed by the other workflow
 name: deploy_from_mdbook
 
 # Controls when the action will run. 
