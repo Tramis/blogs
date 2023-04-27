@@ -13,7 +13,8 @@
 ## 确实出问题了
 
 tragic.
-```
+
+```console
 > Run actions-rs/install@v0.1.2
 > Tool cache is explicitly enabled via the Action input
 > Downloading from the tool cache
