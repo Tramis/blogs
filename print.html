@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="from_the_beginning.html">From The Beginning</a></li><li class="chapter-item expanded "><a href="fp.html"><strong aria-hidden="true">1.</strong> fp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="不动点组合子与阶乘函数.html"><strong aria-hidden="true">1.1.</strong> 不动点组合子与阶乘函数</a></li></ol></li><li class="chapter-item expanded "><a href="CICD.html"><strong aria-hidden="true">2.</strong> CICD</a></li><li class="chapter-item expanded "><a href="伤寒杂病论.html"><strong aria-hidden="true">3.</strong> 伤寒杂病论</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="集中注意力.html"><strong aria-hidden="true">3.1.</strong> 集中注意力</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="test.html">TEST</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="from_the_beginning.html">From The Beginning</a></li><li class="chapter-item expanded "><a href="TLS.html"><strong aria-hidden="true">1.</strong> TLS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="racket.html"><strong aria-hidden="true">1.1.</strong> racket</a></li><li class="chapter-item expanded "><a href="cons_and_list.html"><strong aria-hidden="true">1.2.</strong> cons and list</a></li><li class="chapter-item expanded "><a href="stars.html"><strong aria-hidden="true">1.3.</strong> stars</a></li><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">1.4.</strong> shadow</a></li><li class="chapter-item expanded "><a href="friends_and_relations.html"><strong aria-hidden="true">1.5.</strong> friends and relations</a></li><li class="chapter-item expanded "><a href="abstract_and_continuation.html"><strong aria-hidden="true">1.6.</strong> continuation</a></li><li class="chapter-item expanded "><a href="halt.html"><strong aria-hidden="true">1.7.</strong> halt</a></li><li class="chapter-item expanded "><a href="y.html"><strong aria-hidden="true">1.8.</strong> y(WIP)</a></li><li class="chapter-item expanded "><a href="type.html"><strong aria-hidden="true">1.9.</strong> type(WIP)</a></li><li class="chapter-item expanded "><a href="lazy.html"><strong aria-hidden="true">1.10.</strong> lazy(WIP)</a></li><li class="chapter-item expanded "><a href="questions_TLS.html"><strong aria-hidden="true">1.11.</strong> questions</a></li></ol></li><li class="chapter-item expanded "><a href="fp.html"><strong aria-hidden="true">2.</strong> fp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="不动点组合子与阶乘函数.html"><strong aria-hidden="true">2.1.</strong> 不动点组合子与阶乘函数</a></li></ol></li><li class="chapter-item expanded "><a href="CICD.html"><strong aria-hidden="true">3.</strong> CICD</a></li><li class="chapter-item expanded "><a href="伤寒杂病论.html"><strong aria-hidden="true">4.</strong> 伤寒杂病论</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="集中注意力.html"><strong aria-hidden="true">4.1.</strong> 集中注意力</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="test.html">TEST</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -162,7 +162,829 @@
 <code>mdbook</code> 默认的公式是 <code>mathjax</code>。这个 <code>blog</code> 感觉尽量不要把数学的东西丢进来，但等下还是看看 <code>preprocess</code>，把 <code>mathjax</code> 换成 <code>katex</code>，以及</li>
 <li><input disabled="" type="checkbox"/>
 <code>markdown</code> 看看有没有 <code>CICD</code> 支持的 <code>lint</code>。</li>
+<li><input disabled="" type="checkbox" checked=""/>
+<code>racket</code> 语法高亮。</li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="tls"><a class="header" href="#tls">TLS</a></h1>
+<blockquote>
+<p>One cannot build a beautiful and functional
+bridge without a knowledge of steel and dirt and considerable mathematical technique for using
+this knowledge to compute the properties of structures.</p>
+</blockquote>
+<p>开始研习 <em><strong>the little schemer</strong></em>，记录学习过程中的想法</p>
+<p>据 preface 所言，此书旨在 <em>teaching reader thinking recursively</em>，为了达成这一目的，作者才选择了 scheme 作为教具。</p>
+<p>此书的写作目的并非让读者熟练掌握 scheme 本身，作者明确指出书中只用到了 scheme 的一个小子集。</p>
+<p>在 guideline 中，作者建议 <em>Read carefully</em>，并且 <em>Do not read the book in fewer than three sittings</em>。前面章节的理解会影响后面的阅读，请读者保证顺序理解所述内容。</p>
+<p>若在读书过程中设立一个明确的目标，大概就是理解并自行推导出 <code>y-combinator</code>，理解其思想。</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="racket"><a class="header" href="#racket">Racket</a></h1>
+<p><code>racket</code> 是 <code>lisp</code> 的一种方言，是 <code>scheme</code> 的一个 descendant。</p>
+<p>没了解过 <code>scheme</code>，不太清楚具体区别。不过据说 <code>racket</code> 能直接用来看 <code>TLS</code>，使用 <code>DrRacket</code>，并选择 <code>racket</code> 原生语言即可：</p>
+<pre><code class="language-scheme">#lang racket
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="cons-and-list"><a class="header" href="#cons-and-list"><code>cons</code> and <code>list</code></a></h1>
+<h2 id="atom"><a class="header" href="#atom"><code>atom</code></a></h2>
+<p>序言中定义了 <code>atom?</code>:</p>
+<pre><code class="language-scheme">(define atom?
+    (lambda (x)
+        (and (not (pair? x)) (not (null? x)))))
+</code></pre>
+<p>即，不是 <code>pair</code>，也不是 <code>null</code> 的东西就叫 <code>atom</code></p>
+<pre><code class="language-scheme">&gt; (atom? null)
+#f
+&gt; (atom? '(1 2 3))
+#f
+
+&gt; (atom? #f)
+#t
+&gt; (atom? 1)
+#t
+&gt; (atom? &quot;abc&quot;)
+#t
+</code></pre>
+<p>怀疑这是不是书中自造的概念，我在 <code>The Racket Guide</code> 里没看到这个说法</p>
+<h2 id="pair-list-和-s-expression"><a class="header" href="#pair-list-和-s-expression"><code>pair</code>, <code>list</code> 和 <code>s-expression</code></a></h2>
+<p><em>reference</em> 中提到：</p>
+<blockquote>
+<p>In general, the result of cons is a pair. The more traditional name for the cons? function is pair?, and we’ll use the traditional name from now on.</p>
+</blockquote>
+<p>也就是说 <code>cons</code> 是 <code>pair</code> 的构造子，<code>(cons a b)</code> 表示把 <code>a</code> 和 <code>b</code> 连在一起，构成一个 <code>pair</code>。</p>
+<blockquote>
+<p>这一点与书中不一样。<code>TLS</code> 中并没有 <code>pair</code> 这一回事，而是只有 <code>list</code>，并将 <code>cons</code> 视为 <code>list</code> 的构造子，其第二个参数必须也是一个 <code>list</code>。</p>
+<p>我这里还是采用 <code>racket</code> 实际的情况。</p>
+<p>对此，书中提到一笔：</p>
+<blockquote>
+<p><em>In practice, <code>(cons a b)</code> works for all values <code>a</code> and <code>b</code>, and</em></p>
+<p><code>(car (cons a b)) = a</code>,
+<code>(cdr (cons a b)} = b</code></p>
+</blockquote>
+</blockquote>
+<p>利用 <code>cons</code>，我们构造出 <code>list</code> 和 <code>s-expression</code>，按我理解，二者是递归定义的，以 CFG 写出来大概像这样:</p>
+<pre><code class="language-scheme">S-expression = 
+    atom |
+    list
+</code></pre>
+<pre><code class="language-scheme">list = 
+    null |
+    (cons S-expression list)
+</code></pre>
+<p><code>list</code></p>
+<ol>
+<li>要么是 <code>null</code></li>
+<li>要么是一个特殊的 <code>pair</code>。特殊在于该 <code>pair</code> 的第二个部分一定是一个 <code>list</code>。由此可知，<code>list</code> 必有类似以下的结构：</li>
+</ol>
+<pre><code class="language-scheme">(cons a (cons b (cons c (cons d null))))
+</code></pre>
+<p>一个例子是</p>
+<pre><code class="language-scheme">&gt; (cons null null)
+'(())
+</code></pre>
+<p><code>racket</code> 中，<code>null</code> 也可以写作 <code>'()</code>。单引号是一个函数 <a href="cons_and_list.html#%60quote%60"><code>quote</code></a> 的简写</p>
+<p>值得注意，<code>(cons a b)</code> 直接将 <code>a, b</code> 组成一个 <code>pair</code>，这不等于 <code>(list a b)</code>：</p>
+<pre><code class="language-scheme">&gt; (cons 1 2)
+'(1 . 2)
+&gt; (cons 1 '(2))
+'(1 2)
+&gt; (list 1 2)
+'(1 2)
+
+&gt; (list? (cons 1 2))
+#f
+&gt; (pair? (cons 1 2))
+#t
+&gt; (pair? (list 1 2))
+# t
+</code></pre>
+<p><code>'(a b)</code> 表示一个 <code>list</code>，而 <code>'(a . b)</code> 表示一个 <code>pair</code>。应该将前者看作后者的一种简写，<code>'(a b)</code> 写全了应该是 <code>'(a . (b . ()))</code></p>
+<h1 id="quote"><a class="header" href="#quote"><code>quote</code></a></h1>
+<blockquote>
+<p>还需理解 <code>datum</code>。<code>quote</code> 是否与其数据引用有关。</p>
+</blockquote>
+<pre><code class="language-scheme">'a = (quote a)
+'(a b c) = (list 'a 'b 'c)
+</code></pre>
+<p>在 REPL 里测试一下：</p>
+<pre><code class="language-scheme">&gt; '#t
+#t
+&gt; '1
+1
+&gt; '&quot;abc&quot;
+&quot;abc&quot;
+
+&gt; '()
+'()
+&gt; (list)
+'()
+&gt; 'fdasfs
+'fdasfs
+</code></pre>
+<p>一个层层展开的例子：</p>
+<pre><code class="language-scheme">''(1)
+-&gt; (quote '(1))
+-&gt; (quote (quote (list 1)))
+
+&gt; (car ''(1))
+'quote
+&gt; (cdr ''(1))
+'((1))
+</code></pre>
+<p><strong>分析一下</strong>，首先，要理解 <code>(car ''(1))</code> 得到 <code>'quote</code> ，只需要理解 <code>(quote (quote (list 1)))</code> 是一个 <code>list</code>，它的左侧就是 <code>quote</code></p>
+<p>然后为了得到 <code>(cdr ''(1))</code>，这里把 <code>list</code> 看成 <code>pair</code>，即：</p>
+<ul>
+<li><code>(quote (quote (list 1)))</code> 看作</li>
+<li><code>(quote . ((quote (list 1))))</code></li>
+</ul>
+<p>再例如：</p>
+<pre><code class="language-scheme">&gt; (car '(define a 1))
+'define
+&gt; (car '(+ 1 2))
+'+
+</code></pre>
+<p>这里有个关于 <code>null</code> 的，有点特别的例子：</p>
+<pre><code class="language-scheme">&gt; null
+'()
+&gt; '()
+'()
+&gt; 'null
+'null
+&gt; ''()
+''()
+&gt; ''null
+''null
+</code></pre>
+<h1 id="null"><a class="header" href="#null"><code>null</code></a></h1>
+<p>书中指出，<code>(quote ())</code> 是 <code>null</code> 的一种记号。</p>
+<blockquote>
+<p>Lisp: Also <code>()</code> and <code>'()</code>.</p>
+<p>Scheme: Also <code>'()</code></p>
+</blockquote>
+<p>实验一下:</p>
+<pre><code class="language-scheme">&gt; (quote ())
+'()
+&gt; (null? (quote ()))
+#t
+</code></pre>
+<p>嗯... <code>()</code> 能单独出现在 <code>(quote ())</code> 里，这是否说明解释器以某种规则进行了特判。</p>
+<pre><code class="language-scheme">&gt; null
+'()
+&gt; '()
+'()
+&gt; (eq? null '())
+#t
+&gt; (eq? 'null ''())
+#f
+</code></pre>
+<p>有点神秘</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="stars"><a class="header" href="#stars">stars</a></h1>
+<p>直到 <code>*-functions</code> 这一章，作者用上了他定义的所有东西。其迭代的对象有</p>
+<ol>
+<li><code>(cons atom list)</code></li>
+<li><code>(cons number list)</code></li>
+<li><code>(cons s-expression list)</code></li>
+</ol>
+<p>从这时起，每次 <code>l</code> 上的迭代都将判断三块地方</p>
+<ol>
+<li><code>(null? l)</code>，其为边界条件</li>
+<li><code>(atom? (car l))</code>，若 <code>#t</code>，则在 <code>(car l)</code> 上递归</li>
+<li><code>else</code>，在 <code>(cdr l)</code> 上递归</li>
+</ol>
+<p>例如 <code>occur*</code></p>
+<pre><code class="language-scheme">(define (occur* a l)
+  (cond
+    ((null? l) 0)
+    ((atom? (car l))
+     (cond
+       ((eq? a (car l)) (add1 (occur* a (cdr l))))
+       (else (occur* a (cdr l)))))
+    (else (+ (occur* a (car l)) (occur* a (cdr l))))))
+</code></pre>
+<p>关于 <code>leftmost</code></p>
+<pre><code class="language-scheme">(define (leftmost l)
+  (cond
+    ((null? l) null)
+    ((atom? (car l)) (car l))
+    (else
+     (cond
+       ((null? (leftmost (car l)))
+        (leftmost (cdr l)))
+       (else (leftmost (car l)))))))
+</code></pre>
+<p>实际上不需要去问 <code>(cdr l)</code>，因为此处左侧要么存在一个 <code>atom</code>，要么为 <code>null</code>，因而只需要考虑 <code>(car l)</code></p>
+<pre><code class="language-scheme">(define (leftmost1 l)
+  (cond
+    ((null? l) null)
+    ((atom? (car l)) (car l))
+    (else (leftmost1 (car l)))))
+</code></pre>
+<p>书上给的答案是</p>
+<pre><code class="language-scheme">(define (leftmost2 l)
+  (cond
+    ((atom? (car l)) (car l))
+    (else (leftmost2 (car l)))))
+</code></pre>
+<p>其假设 <code>l</code> 的左侧非 <code>null</code></p>
+<p>不清楚实际写代码，如果出了 <code>null</code> 怎么办。是 <code>lisp</code> 不容易出现这种问题吗？</p>
+<h2 id="eqlist"><a class="header" href="#eqlist"><code>eqlist?</code></a></h2>
+<p>首先，写了一个判断两个 <code>list</code> 是否相等的判定函数 <code>eqlist?</code></p>
+<pre><code class="language-scheme">(define (eqlist? l r)
+  (cond
+    ((and (null? l) (null? r)) #t)
+    ((or (null? l) (null? r)) #f)
+    (else
+     (cond
+       ((and (atom? (car l)) (atom? (car r)))
+        (and (eq? (car l) (car r))
+             (eqlist? (cdr l) (cdr r))))
+       ((or (atom? (car l)) (atom? (car r))) #f)
+       (else (and (eqlist? (car l) (car r))
+                  (eqlist? (cdr l) (cdr r))))))))
+</code></pre>
+<p>然后，利用这个函数来写一个判定 <code>s-expression</code> 是否相等的函数 <code>equal?</code></p>
+<pre><code class="language-scheme">(define (equal l r)
+  (cond
+    ((and (atom? l) (atom? r)) (eq? l r))
+    ((or (atom? l) (atom? r)) #f)
+    (else (eqlist? l r))))
+</code></pre>
+<p>最后，用 <code>equal?</code> 倒回来替换掉 <code>eqlist?</code> 中 <code>s-expression</code> 的比较：</p>
+<pre><code class="language-scheme">; modified `eqlist?`
+(define (eqlist? l r)
+  (cond
+    ((and (null? l) (null? r)) #t)
+    ((or (null? l) (null? r)) #f)
+    (else (and (equal? (car l) (car r))
+               (eqlist? (cdr l) (cdr r))))))
+
+; use this `equal?`
+(define (equal? l r)
+  (cond
+    ((and (atom? l) (atom? r)) (eq? l r))
+    ((or (atom? l) (atom? r)) #f)
+    (else (eqlist? l r))))
+</code></pre>
+<p>这形成了一个相互递归调用，它的收敛性我不好说</p>
+<p>只能勉强看出来，每次调用的过程中，参数都在变，而且应该是作为 <code>list</code> 变短了。这很符合书中所述的某一条 <em>Commandment</em></p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="shadow"><a class="header" href="#shadow">shadow</a></h1>
+<p>这章没太看懂跟 <code>shadow</code> 有什么关系。</p>
+<p>前面写了两个不同形式的算术表达式 <code>parser</code>，后面用另一种方式定义了自然数。</p>
+<p>估计是想跟柏拉图的地穴寓言一样表达一下认知论的东西。</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="friends-and-relations"><a class="header" href="#friends-and-relations">friends and relations</a></h1>
+<h2 id="set"><a class="header" href="#set">set</a></h2>
+<p>实现了一些集合操作，没什么好说的</p>
+<h2 id="pair"><a class="header" href="#pair">pair</a></h2>
+<p>书中的 <code>pair</code> 定义为长为 <code>2</code> 的 <code>list</code>，与实际上不同。</p>
+<h2 id="fun"><a class="header" href="#fun">fun</a></h2>
+<p>从函数映射的角度看这种...类似 <code>map</code> 的结构</p>
+<p>定义 <code>fun?</code> 来判定映射, <code>fullfun?</code> 来判定双射。这不该是满射吗</p>
+<p>应该说 <code>map</code> 天然就是满射，所以他这里只判断了单射，于是满射。</p>
+<p>这章最后用两种办法判定双射，一种是直接看陪域有没有重复，也就是是不是单射。</p>
+<p>问有没有另一种实现，给出的答案是判定其逆映射是不是映射。</p>
+<p>嗯...</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="abstract-and-continuation"><a class="header" href="#abstract-and-continuation">abstract and continuation</a></h1>
+<p>这章还没深入讲 <code>lambda</code>，只是将其作为抽象工具</p>
+<h2 id="continuation"><a class="header" href="#continuation">continuation</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Continuation">Wiki</a>:</p>
+<blockquote>
+<p>In computer science, a continuation is an abstract representation of the control state of a computer program. A continuation implements (reifies) the program control state, i.e. the continuation is a data structure that represents the computational process at a given point in the process's execution; the created data structure can be accessed by the programming language, instead of being hidden in the runtime environment. Continuations are useful for encoding other control mechanisms in programming languages such as exceptions, generators, coroutines, and so on.</p>
+</blockquote>
+<p>简单理解的话，感觉是把一个连续过程分解成从节点到节点，并且把节点以具体数据结构表示出来方便后续操作。有点像 <code>linux</code> 的文件系统，有点像流</p>
+<h2 id="multiremberco"><a class="header" href="#multiremberco"><code>multirember&amp;co</code></a></h2>
+<p>我不好说，这部分有点烧脑</p>
+<pre><code class="language-scheme">(define multirember&amp;co
+  (lambda (a lat col)
+    (cond
+      ((null? lat)
+       (col '() '()))
+      ((eq? a (car lat))
+       (multirember&amp;co a (cdr lat)
+                       (lambda (newlat seen)
+                         (col newlat (cons (car lat) seen)))))
+      (else
+       (multirember&amp;co a (cdr lat)
+                       (lambda (newlat seen)
+                         (col (cons (car lat) newlat) seen)))))))
+</code></pre>
+<p>还是直接来个例子展开：</p>
+<pre><code class="language-scheme">(define a-friend
+    (lambda (x y) (null? y)))
+
+(multirember&amp;co 2 '(1 2 3) a-friend)
+
+=&gt; (multirember&amp;co 2 '(2 3)
+                   (lambda (newlat seen)
+                     (a-friend (cons 1 newlat) seen)))
+
+=&gt; (multirember&amp;co 2 '(3)
+                   (lambda (newlat' seen')
+                     (lambda (newlat seen)
+                       (a-friend (cons 1 newlat) seen))
+                     newlat'
+                     (cons 2 seen')))
+
+=&gt; (multirember&amp;co 2 '()
+                   (lambda (newlat'' seen'')
+                     (lambda (newlat' seen')
+                       (lambda (newlat seen)
+                         (a-friend (cons 1 newlat) seen))
+                       newlat'
+                       (cons 2 seen'))
+                     (cons 3 newlat'')
+                     seen''))
+
+=&gt; ((lambda (newlat'' seen'')
+      (lambda (newlat' seen')
+        (lambda (newlat seen)
+          (a-friend (cons 1 newlat) seen))
+          newlat'
+          (cons 2 seen'))
+        (cons 3 newlat'')
+        seen'')
+      '()
+      '())
+
+=&gt; ((lambda (newlat' seen')
+      (lambda (newlat seen)
+        (a-friend (cons 1 newlat) seen))
+        newlat'
+        (cons 2 seen'))
+      (cons 3 '()) 
+      '()))
+
+=&gt; ((lambda (newlat seen)
+      (a-friend (cons 1 newlat) seen))
+    (cons 3 '())
+    (cons 2 '()))
+
+=&gt; (a-friend (cons 1 (cons 3 '()) (cons 2 '())))
+
+=&gt; #f
+     
+</code></pre>
+<p>我不好说。</p>
+<p>从这个展开来看，该函数会将 <code>l</code> 分成两个 <code>list</code>，前者是去掉 <code>a</code> 的 <code>l</code>，后者是所有的 <code>a</code>。</p>
+<p>恕我直言，这个例子举得不是很好。一来这个函数的意义并不显然，二来难度曲线太大，手动模拟起来有些繁琐</p>
+<h2 id="已经解包"><a class="header" href="#已经解包">已经解包</a></h2>
+<p>我觉得一个简单点的例子也许看的更清楚</p>
+<p>写个函数 <code>remove-a&amp;co x l col</code> 处理数字的 <code>list</code>，去掉 <code>l</code> 中的 <code>x</code> 并统计其个数</p>
+<pre><code class="language-scheme">(define (remove-a&amp;co x l col)
+  (cond
+    ((null? l) (col '() 0))
+    ((= x (car l))
+     (remove-a&amp;co x (cdr l)
+                  (lambda (newl cnt)
+                    (col newl (add1 cnt)))))
+    (else (remove-a&amp;co x (cdr l)
+           (lambda (newl cnt)
+             (col (cons (car l) newl) cnt))))))
+
+; (remove-a&amp;co 1 '(2 1 3 5 4 1)
+;              (lambda (l cnt) (list l cnt)))
+
+; 直接用 `list` 替代这个 `lambda`
+(remove-a&amp;co 1 '(2 1 3 5 4 1) list)
+
+; output: 
+;   '((2 3 5 4) 2)
+</code></pre>
+<p>用一个简单点的例子写一下展开过程：</p>
+<pre><code class="language-scheme">(remove-a&amp;co 1 '(2 1 3) list)
+
+-&gt;
+(remove-a&amp;co 1 '(1 3)
+    (lambda (newl cnt)
+        (list (cons 2 newl) cnt)))
+
+-&gt;
+(remove-a&amp;co 1 '(3)
+    (lambda (newl' cnt')
+        (lambda (newl cnt)
+            (list (cons 2 newl) cnt))
+          newl'
+          (add1 cnt')))
+
+-&gt;
+(remove-a&amp;co 1 '()
+    (lambda (newl'' cnt'')
+        (lamdba (newl' cnt')
+            (lambda (newl cnt)
+                (list (cons 2 newl) cnt))
+            newl'
+            (add1 cnt'))
+        (cons 3 newl'')
+        cnt''))
+
+-&gt;
+((lambda (newl'' cnt'')
+    (lamdba (newl' cnt')
+        (lambda (newl cnt)
+            (list (cons 2 newl) cnt))
+        newl'
+        (add1 cnt'))
+    (cons 3 newl'')
+    cnt'')
+    '()
+    0)
+
+-&gt;
+((lambda (newl' cnt')
+    (lambda (newl cnt)
+        (list (cons 2 newl) cnt))
+        newl'
+        (add1 cnt'))
+    (cons 3 '())
+    0)
+
+-&gt;
+((lambda (newl cnt)
+    (list (cons 2 newl) cnt))
+    (cons 3 '())
+    1)
+
+-&gt;
+(list (cons 2 (cons 3 '())) 1)
+
+; which is
+;   '((2 3) 1)
+</code></pre>
+<p><code>lambda</code> 嵌套 <code>lambda</code>，本该在过程式语言中最里侧的参数，在这里却是从最外侧传进去</p>
+<p>数据传递以参数的形式进行，而没有解包的过程</p>
+<h2 id="evens-only"><a class="header" href="#evens-only"><code>evens-only*</code></a></h2>
+<p>该函数过滤掉 <code>list</code> 中的奇数，并统计去掉奇数的个数。</p>
+<p>此习题与之前的差不多，不过要求从 <code>list</code> 的左右两边同时递归，并整合两边递归的结果。</p>
+<pre><code class="language-scheme">(define (evens-only*&amp;co l col)
+  (cond
+    ((null? l) (col '() 0))
+    ((atom? (car l))
+     (cond
+       ((even? (car l))
+        (evens-only*&amp;co (cdr l)
+                     (lambda (newl cnt)
+                       (col (cons (car l) newl) cnt))))
+       (else (evens-only*&amp;co (cdr l)
+                          (lambda (newl cnt)
+                            (col newl (add1 cnt)))))))
+    (else (evens-only*&amp;co (cdr l)
+                       (lambda (newld cntd)
+                         (evens-only*&amp;co (car l)
+                                         (lambda (newla cnta)
+                                           (col (cons newla newld)
+                                                (+ cnta cntd)))))))))
+
+(evens-only*&amp;co '((9 1 2 8) 3 10 ((9 9) 7 6) 2) list)
+
+; '(((2 8) 10 (() 6) 2) 6)
+</code></pre>
+<p>这个整合两侧的 <code>lambda</code> 很不好想。</p>
+<p>之所以能写出这个 <code>collector</code>，我想是因为二叉树可以拉直成一条链</p>
+<p>从回调函数的角度来理解，当 <code>(lambda (newl cnt) ...)</code> 定义出来时，就该假设其函数体定义里已经得到了 <code>newl, cnt</code> 的值，并且能够自由使用</p>
+<p>嗯...</p>
+<p><code>callback</code> 可能是个不错的角度</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="halt"><a class="header" href="#halt">halt</a></h1>
+<blockquote>
+<p>A's arguments, like shuffie's and looking's, do not necessarily decrease for the recursion.</p>
+</blockquote>
+<p>第九章从几个函数出发简单介绍了一下停机和死循环。</p>
+<p>它将最终会停机的函数称为 <code>total</code>，否则称为 <code>partial</code>。</p>
+<p>以映射角度看函数，其居然有值无法到达陪域，因而称为 <code>partial function</code></p>
+<h2 id="停机"><a class="header" href="#停机">停机</a></h2>
+<p>这里给的证明是若函数 <code>will-stop?</code> 是 <code>total</code> 的，则：</p>
+<pre><code class="language-scheme">(will-stop? (lambda (x)
+    (and (will-stop? last-try)
+        (eternity x))))
+</code></pre>
+<p>会得到矛盾的值。</p>
+<p>《计算理论导引》那书上的停机问题好像是归约到图灵机 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">TM</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 不可判定上去</p>
+<h2 id="λ-递归"><a class="header" href="#λ-递归"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 递归</a></h2>
+<pre><code class="language-scheme">(lambda (x) (x x))
+</code></pre>
+<p>这个例子相当引人入胜，用 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 构造出 <code>length</code> 来计算 <code>list</code> 的长度：</p>
+<h3 id="尝试"><a class="header" href="#尝试">尝试</a></h3>
+<pre><code class="language-scheme">(((lambda (mk-length)
+   (mk-length mk-length))
+ (lambda (length)
+   (lambda (l)
+     (cond
+       ((null? l) 0)
+       (else (add1
+              (length (cdr l)))))))) 
+ '())
+</code></pre>
+<p>这个仅能计算一层，展开的话是：</p>
+<pre><code class="language-scheme">-&gt;
+(((lambda (length)
+  (lambda (l)
+    (cond
+      ((null? l) 0)
+      (else (add1
+            (length (cdr l)))))))
+  (lambda (length)
+    (lambda (l)
+      (cond
+      ((null? l) 0)
+       (else (add1
+             (length (cdr l))))))))
+  '())
+
+-&gt;
+((lambda (l)
+    (cond
+    ((null? l) 0)
+    (else (add1
+        ((lambda (length)
+           (lambda (l)
+            (cond
+              ((null? l) 0)
+              (else (add1
+                (length (cdr l)))))))
+           (cdr l))))))                 ; 本应传递一个 `length` 得到内部的 lambda，但传递了一个 `list`
+  '())
+
+-&gt;
+0
+</code></pre>
+<p>可以看出来尚不足以进行长度大于 <code>0</code> 的递归，因为到后面 <code>length</code> 没有正确的参数传进去。</p>
+<h3 id="修复"><a class="header" href="#修复">修复</a></h3>
+<pre><code class="language-scheme">; 一步步改进
+(((lambda (mk-length)
+   (mk-length mk-length))
+ (lambda (mk-length)
+   (lambda (l)
+     (cond
+       ((null? l) 0)
+       (else (add1
+              ((mk-length eternity)
+               (cdr l))))))))
+ '(1))
+</code></pre>
+<p>这里放了个 <code>eternity</code> 虚位以待，然而并不能改变它算不了非空 <code>list</code> 的事实：</p>
+<pre><code class="language-scheme">-&gt;
+(lambda (l)
+  (cond
+  ((null? l) 0)
+  (else (add1
+    ((lambda (mk-length)
+      (lambda (l)
+        (cond
+          ((null? l) 0)
+          (else (add1 
+                  (mk-length (cdr l)))))))
+      eternity                      ; 充其量
+      (cdr l))))))
+
+-&gt;
+(lambda (l)
+  (cond
+    ((null? l) 0)
+    (else (add1
+      ((lambda (l')
+          (cond
+            ((null? l') 0)
+            (else (add1 
+                    (eternity (cdr l))))))
+        (cdr l))))))
+</code></pre>
+<p>可以看出仅能递归两层。</p>
+<p>接下来的任务是要用一个无穷递归来替换 <code>eternity</code></p>
+<h3 id="无穷"><a class="header" href="#无穷">无穷</a></h3>
+<p>为了让递归更明显，多写几层，无穷递归部分仍以 <code>eternity</code> 暂时代替</p>
+<pre><code class="language-scheme">(lambda (l)
+(cond
+((null? l) 0)
+(else (add1
+  (
+    (lambda (l)
+    (cond
+    ((null? l) 0)
+    (else (add1
+      (
+        (lambda (l)
+        (cond
+        ((null? l) 0)
+        (else (add1
+          (
+            (lambda (l)
+            (cond
+            ((null? l) 0)
+            (else (add1
+              (
+                (lambda (l)
+                (cond
+                ((null? l) 0)
+                (else (add1
+                  (
+                    (lambda (l)
+                    (cond
+                    ((null? l) 0)
+                    (else (add1
+                      (
+                        (lambda (l)
+                        (cond
+                        ((null? l) 0)
+                        (else (add1
+                          (
+                            (lambda (l)
+                            (cond
+                            ((null? l) 0)
+                            (else (add1
+                              (
+                                (lambda (l)
+                                (cond
+                                ((null? l) 0)
+                                (else (add1
+                                  (
+                                    (lambda (l)
+                                    (cond
+                                    ((null? l) 0)
+                                    (else (add1
+                                      (
+                                        (lambda (l)
+                                        (cond
+                                        ((null? l) 0)
+                                        (else (add1
+                                          (
+                                            (lambda (l)
+                                            (cond
+                                            ((null? l) 0)
+                                            (else (add1
+                                              (
+                                                eternity
+                                            (cdr l))))))
+                                        (cdr l))))))
+                                    (cdr l))))))
+                                (cdr l))))))
+                            (cdr l))))))
+                        (cdr l))))))
+                    (cdr l))))))
+                (cdr l))))))
+            (cdr l))))))
+        (cdr l))))))
+    (cdr l))))))
+(cdr l))))))
+</code></pre>
+<p>回过头看用 <code>eternity</code> 作为占位符的定义：</p>
+<pre><code class="language-scheme">((lambda (mk-length)
+   (mk-length mk-length))
+ (lambda (mk-length)
+   (lambda (l)
+     (cond
+       ((null? l) 0)
+       (else (add1
+              ((mk-length eternity)
+               (cdr l))))))))
+</code></pre>
+<p>最后真正想要得到的是这一部分：</p>
+<pre><code class="language-scheme">(lambda (l)
+  (cond
+    ((null? l) 0)
+    (else (add1
+            ((mk-length eternity)
+             (cdr l))))))
+</code></pre>
+<p>并且想要用这一个整体自身来替换 <code>(mk-length eternity)</code></p>
+<pre><code class="language-scheme">(lambda (l)
+  (cond
+    ((null? l) 0)
+    (else (add1
+            ((lambda (l)
+              (cond
+                ((null? l) 0)
+                (else (add1
+                        ((mk-length eternity)
+                        (cdr l)))))))
+             (cdr l))))))
+</code></pre>
+<p>换言之，我需要找到一个 <code>eternity</code> 满足</p>
+<pre><code class="language-scheme">
+(mk-length eternity) 
+
+=
+
+(lambda (l)
+  (cond
+    ((null? l) 0)
+    (else (add1
+            ((mk-length eternity)
+             (cdr l))))))
+
+</code></pre>
+<p>然而答案一开始就给出来了：</p>
+<pre><code class="language-scheme">mk-length = 
+(lambda (mk-length)
+  (lambda (l)
+    (cond
+      ((null? l) 0)
+      (else (add1
+              ((mk-length eternity)
+              (cdr l))))))))
+
+(mk-length mk-length) = 
+(lambda (l)
+  (cond
+    ((null? l) 0)
+    (else (add1
+            ((mk-length eternity)
+            (cdr l))))))))
+</code></pre>
+<p>于是只需要取 <code>eternity</code> 在这里等于 <code>mk-length</code> 即可</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="ywip"><a class="header" href="#ywip">y(WIP)</a></h1>
+<p><code>TLS</code> 里最终抽象出来的 <code>Y</code> 组合子长这样：</p>
+<pre><code class="language-scheme">(define Y
+    (lambda (le)
+        ((lambda (f) (f f))
+         (lambda (f) 
+            (le (lambda (x) ((f f) x)))))))
+</code></pre>
+<p>里边稍微 <code>apply</code> 一层就跟经典的长得一样了：</p>
+<pre><code class="language-scheme">(define Y
+    (lambda (le)
+        ((lambda (f)
+            (le (lambda (x) ((f f) x))))
+         (lambda (f)
+            (le (lambda (x) ((f f) x)))))))
+</code></pre>
+<p>注意 <code>(lambda (x) ((f f) x))</code> 其实就是 <code>(f f)</code>，这里为了惰性求值包了一层。</p>
+<pre><code class="language-scheme">(define Y
+    (lambda (le)
+        ((lambda (f)
+            (le (f f)))
+         (lambda (f)
+            (le (f f))))))
+
+(define fact
+  (Y (lambda (fact1)
+       (lambda (n)
+         (cond
+           ((= n 1) 1)
+           (else (* n (fact1 (sub1 n)))))))))
+
+(fact 1)
+(fact 2)
+(fact 3)
+(fact 5)
+</code></pre>
+<p>上述写法会无穷递归</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="typewip"><a class="header" href="#typewip">type(WIP)</a></h1>
+<p>找找有没有办法查看表达式的类型。</p>
+<p>或者说有没有官方支持的类型。</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="lazywip"><a class="header" href="#lazywip">lazy(WIP)</a></h1>
+<p>在提取 <code>length</code> 里面 <code>(mk-length mk-length)</code> 的时候，利用 <code>lambda</code> 包一层实现了惰性，问：</p>
+<pre><code class="language-scheme">(a a)
+
+(lambda (x)
+    ((a a) x))
+</code></pre>
+<p>有什么区别</p>
+<p>在正常求值的时候应该看不出来区别，然而在作为参数传递的时候区别很大：</p>
+<pre><code class="language-scheme">(define (do-x f x)
+    (f x))
+
+(do-x (a a) 1)
+；先求值 (a a)，再代入
+
+(do-x (lambda (x)
+        ((a a) x)) 1)
+-&gt;
+((lambda (x) ((a a) x)) 1)
+-&gt;
+((a a) 1)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="questions"><a class="header" href="#questions">questions</a></h1>
+<h2 id="1-explain"><a class="header" href="#1-explain">1. explain</a></h2>
+<pre><code class="language-scheme">&gt; null
+'()
+&gt; '()
+'()
+&gt; (eq? null '())
+#t
+&gt; (eq? 'null ''())
+#f
+</code></pre>
+<h2 id="2-why-not-same"><a class="header" href="#2-why-not-same">2. why not same</a></h2>
+<pre><code class="language-scheme">&gt; (eq? (quote 1) 1)
+#t
+&gt; (eq? (quote a) a)
+#f
+&gt; a
+'()
+&gt; (define y a)
+&gt; (eq? (quote a) y)
+#f
+</code></pre>
+<h2 id="3-litteral"><a class="header" href="#3-litteral">3. litteral?</a></h2>
+<p>能否写一个函数 <code>car l</code>，使其返回 <code>l</code> 的第一个字符？</p>
+<p>不同于 <code>car '(+ 2 3)</code> 会得到 <code>'+</code>，能否有 <code>car1 (+ 2 3)</code> 得到 <code>'+</code>？</p>
+<p>感觉不行，默认是按值传递的。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="fp"><a class="header" href="#fp">fp</a></h1>
 <blockquote>
@@ -224,9 +1046,72 @@ l      │      │         xxx
 </code></pre>
 <p>基本意思就是不动点随着数列趋于极限，将逐步收敛到一个“稳定”的定值。或者干脆就等于这个值，同时因为这个点很“稳定”，于是它不再往外跑，从而得到了一个解。</p>
 <p>那时候的理解很粗糙，没能真正弄懂极限与无穷。但是从利用这个工具解题的过程中还是获得了一点认知：谁掌握了不动点，谁就掌握了整个复杂过程的解。</p>
-<h2 id="怎么解方程"><a class="header" href="#怎么解方程">怎么解方程</a></h2>
+<h2 id="方程例子"><a class="header" href="#方程例子">方程例子</a></h2>
 <p>上面提到的 <code>blog</code> 里，作者引用的是函数定义上的不动点，即若 <code>f(x)=x</code>，则 <code>x</code> 是 <code>f</code> 的一个不动点。但我觉得数列的例子可能更像一个算法，于是多写了几笔。</p>
-<p>言归正传。<code>blog</code> 中作者取 </p>
+<p>言归正传。先从阶乘的例子来看 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子怎么用。<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子有这样的性质：</p>
+<pre><code class="language-scheme">Y f = f Y f
+</code></pre>
+<p>也就是说 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子是这样一个高阶函数：对于任意函数 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span></span> 都是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span> 的一个不动点</p>
+<pre><code class="language-scheme">f (Y f) = (Y f) ; 函数作用是右结合的
+</code></pre>
+<p>定义对于阶乘函数 <code>fact</code>，定义一个 <code>mk-fact</code>:</p>
+<pre><code class="language-scheme">(define (mk-fact fact')
+  (lambda (n)
+    (cond
+      ((= n 1) 1)
+      (else (* n (fact' (sub1 n)))))))
+</code></pre>
+<p>我擦，看起来好麻烦，我换个随意点的写法：</p>
+<pre><code class="language-scheme">mk-fact fact' =
+  if n = 1  =&gt; 1
+  else      =&gt; n * (fact' (n-1)) ; 意思到了就行
+</code></pre>
+<p>然后直接将 <code>mk-fact</code> 给 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子：</p>
+<pre><code class="language-scheme">Y mk-fact = mk-fact (Y mk-fact)
+</code></pre>
+<p>接着传递 <code>n</code> 的时候，神奇的事情发生了:</p>
+<pre><code class="language-scheme">(Y mk-fact) n 
+
+-&gt;
+(mk-fact (Y mk-fact)) n
+
+-&gt;
+if n = 1  =&gt; 1
+else      =&gt; n * ((Y mk-fact) (n-1))
+</code></pre>
+<p>如果记 <code>fact = Y mk-fact</code>，则：</p>
+<pre><code class="language-scheme">fact n =
+  if n = 1  =&gt; 1
+  else      =&gt; n * (fact (n-1))
+</code></pre>
+<p>就此得到了阶乘函数 <code>fact</code> 家人们</p>
+<h2 id="y-combinator"><a class="header" href="#y-combinator">Y-combinator</a></h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span></span></span></p>
+<p>这就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子</p>
+<p>随便带入一个 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.5em;vertical-align:-3.5em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4em;"><span style="top:-6.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">→</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">→</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">→</span></span></span><span style="top:-0.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">→</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.5em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4em;"><span style="top:-6.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal" style="margin-right:0.10764em;">ff</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span><span style="top:-0.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord">...</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.5em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">which is exactly </span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>在 <code>apply</code> 一个具体 <code>f</code> 之后，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子变成了类似 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Ω</span></span></span></span> 组合子 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span></span> 的东西</p>
+<p>此式永远能继续规约，不能规约到一个 <em>normal form</em>，因而说它是发散的（<em>diverge</em>)</p>
+<p>如果 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 作用于自身，直接代入即有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">YY</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">YYY</span></span></span></span></p>
+<h2 id="回过头来"><a class="header" href="#回过头来">回过头来</a></h2>
+<p>我们总结一下寻找 <code>fact</code> 的过程：</p>
+<p>首先，先把 <code>fact</code> 写出来</p>
+<pre><code class="language-scheme">fact = lambda n.
+  if n = 1 =&gt; 1
+  else =&gt; n * (fact (n-1))
+</code></pre>
+<p>抽象一下，就是写一个函数体里有 <code>fact</code> 递归调用的函数</p>
+<pre><code class="language-scheme">fact = ... fact ...     (1)
+</code></pre>
+<p>然后我们假设 <code>fact</code> 是某个函数 <code>g</code> 的不动点，即 <code>g fact = fact</code></p>
+<p>于是 <code>fact = g fact</code>          (2)</p>
+<p>于是 <code>g fact = ... fact ...</code>  (3)，将 (2) 代回 (1) 即得</p>
+<p>现在又已知 <code>Y</code> 组合子能求出任意函数的不动点，<code>Y g = g Y g</code>  (4)</p>
+<p>于是设 <code>Y g = h</code>，则 <code>g h = h</code>          (5)，带入 (4) 即得</p>
+<p>于是 <code>g h = ... h ...</code>    (6)，将 <code>h</code> 作为 <code>fact</code> 代入 (3) 即得</p>
+<p>于是 <code>h = ... h ...</code>    将 (5) 代回 (6)</p>
+<p>于是解出了阶乘函数（递归函数）<code>h</code></p>
+<p>简直是魔术</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="cicd"><a class="header" href="#cicd">CICD</a></h1>
 <p>看了半天 <code>github actions</code>，它这个 <code>reusable workflow</code> 是否有些难用。</p>
@@ -236,7 +1121,7 @@ l      │      │         xxx
 <p>这个包在第二次仍然重新编译了，似乎没有按他说的被加入 <code>Github cache</code>，难道这个过程也需要时间吗。</p>
 <h2 id="确实出问题了"><a class="header" href="#确实出问题了">确实出问题了</a></h2>
 <p>tragic.</p>
-<pre><code>&gt; Run actions-rs/install@v0.1.2
+<pre><code class="language-console">&gt; Run actions-rs/install@v0.1.2
 &gt; Tool cache is explicitly enabled via the Action input
 &gt; Downloading from the tool cache
   Newest mdbook-katex version available at crates.io: 0.4.0
@@ -269,6 +1154,9 @@ l      │      │         xxx
 <p>该少冲还是得少冲。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="h1"><a class="header" href="#h1">H1</a></h1>
+<blockquote>
+<p>这群在连云港过冬的蛎鹬本来依赖两个因放水而露出底部的鱼塘作为高潮栖息地，但是前段时间鱼塘又开始蓄水，让它们失去了合适的高潮地，潮水上涨时候只能像这样挤在鱼塘边的土质堤坝上，休息环境更差而且容易受人惊扰，实在是很可怜</p>
+</blockquote>
 <h2 id="h2"><a class="header" href="#h2">H2</a></h2>
 <h3 id="h3"><a class="header" href="#h3">H3</a></h3>
 <ul>
