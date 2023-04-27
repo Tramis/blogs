@@ -11,3 +11,6 @@ after = ["links"]
 
 # [output.html]
 # mathjax-support = true
+
+# [output.custom-highlight]
+# command = "cp ../vendor/highlight.js ."

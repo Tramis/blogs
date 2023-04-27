@@ -18,3 +18,4 @@
 
 - [x] `mdbook` 默认的公式是 `mathjax`。这个 `blog` 感觉尽量不要把数学的东西丢进来，但等下还是看看 `preprocess`，把 `mathjax` 换成 `katex`，以及
 - [ ] `markdown` 看看有没有 `CICD` 支持的 `lint`。
+- [x] `racket` 语法高亮。
