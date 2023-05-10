@@ -15,10 +15,21 @@
   - [lazy(WIP)](lazy.md)
   - [questions](questions_TLS.md)
 
+- [cs144](cs144.md)
+  - [peek](peek.md)
+  - [send and receive](send_and_receive.md)
+
 - [fp](./fp.md)
   - [不动点组合子与阶乘函数](./不动点组合子与阶乘函数.md)
 
+- [Algorithm](./algorithm.md)
+  - [minimum cut maximum flow](./minimum_cut_maximum_flow.md)
+  - [tarjan](./tarjan.md)
+  - [fft](fft.md)
+
 - [CICD](./CICD.md)
+
+- [English](./english.md)
 
 - [伤寒杂病论](./伤寒杂病论.md)
   - [集中注意力](./集中注意力.md)
