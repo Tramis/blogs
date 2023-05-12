@@ -14,6 +14,7 @@
   - [type(WIP)](type.md)
   - [lazy(WIP)](lazy.md)
   - [questions](questions_TLS.md)
+  - [(practice)reverse_list](practice_reverse_list.md)
 
 - [cs144](cs144.md)
   - [peek](peek.md)
