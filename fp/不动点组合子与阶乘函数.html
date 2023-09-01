@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>不动点组合子与阶乘函数 - Learning Blogs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../from_the_beginning.html">From The Beginning</a></li><li class="chapter-item expanded "><a href="../tls/TLS.html"><strong aria-hidden="true">1.</strong> TLS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tls/racket.html"><strong aria-hidden="true">1.1.</strong> racket</a></li><li class="chapter-item expanded "><a href="../tls/cons_and_list.html"><strong aria-hidden="true">1.2.</strong> cons and list</a></li><li class="chapter-item expanded "><a href="../tls/stars.html"><strong aria-hidden="true">1.3.</strong> stars</a></li><li class="chapter-item expanded "><a href="../tls/shadow.html"><strong aria-hidden="true">1.4.</strong> shadow</a></li><li class="chapter-item expanded "><a href="../tls/friends_and_relations.html"><strong aria-hidden="true">1.5.</strong> friends and relations</a></li><li class="chapter-item expanded "><a href="../tls/abstract_and_continuation.html"><strong aria-hidden="true">1.6.</strong> continuation</a></li><li class="chapter-item expanded "><a href="../tls/halt.html"><strong aria-hidden="true">1.7.</strong> halt</a></li><li class="chapter-item expanded "><a href="../tls/y.html"><strong aria-hidden="true">1.8.</strong> y(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/type.html"><strong aria-hidden="true">1.9.</strong> type(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/lazy.html"><strong aria-hidden="true">1.10.</strong> lazy(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/questions_TLS.html"><strong aria-hidden="true">1.11.</strong> questions</a></li><li class="chapter-item expanded "><a href="../tls/practice_reverse_list.html"><strong aria-hidden="true">1.12.</strong> (practice)reverse_list</a></li></ol></li><li class="chapter-item expanded "><a href="../cs144/cs144.html"><strong aria-hidden="true">2.</strong> cs144</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cs144/peek.html"><strong aria-hidden="true">2.1.</strong> peek</a></li><li class="chapter-item expanded "><a href="../cs144/send_and_receive.html"><strong aria-hidden="true">2.2.</strong> send and receive</a></li></ol></li><li class="chapter-item expanded "><a href="../fp/fp.html"><strong aria-hidden="true">3.</strong> fp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fp/不动点组合子与阶乘函数.html" class="active"><strong aria-hidden="true">3.1.</strong> 不动点组合子与阶乘函数</a></li></ol></li><li class="chapter-item expanded "><a href="../algorithm/algorithm.html"><strong aria-hidden="true">4.</strong> algorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../algorithm/minimum_cut_maximum_flow.html"><strong aria-hidden="true">4.1.</strong> minimum cut maximum flow</a></li><li class="chapter-item expanded "><a href="../algorithm/tarjan.html"><strong aria-hidden="true">4.2.</strong> tarjan</a></li><li class="chapter-item expanded "><a href="../algorithm/monotonic.html"><strong aria-hidden="true">4.3.</strong> monotonic</a></li><li class="chapter-item expanded "><a href="../algorithm/fft.html"><strong aria-hidden="true">4.4.</strong> fft</a></li><li class="chapter-item expanded "><a href="../algorithm/CBA.html"><strong aria-hidden="true">4.5.</strong> CBA</a></li></ol></li><li class="chapter-item expanded "><a href="../concurrency/concurrency.html"><strong aria-hidden="true">5.</strong> concurrency</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concurrency/Mutex_Semaphore_monitor.html"><strong aria-hidden="true">5.1.</strong> Mutex, Semaphore, Monitor</a></li></ol></li><li class="chapter-item expanded "><a href="../math/math.html"><strong aria-hidden="true">6.</strong> math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../math/series.html"><strong aria-hidden="true">6.1.</strong> series</a></li><li class="chapter-item expanded "><a href="../math/taylor.html"><strong aria-hidden="true">6.2.</strong> 泰勒</a></li><li class="chapter-item expanded "><a href="../math/limits.html"><strong aria-hidden="true">6.3.</strong> limit</a></li><li class="chapter-item expanded "><a href="../math/magic_integral.html"><strong aria-hidden="true">6.4.</strong> 神奇积分题</a></li><li class="chapter-item expanded "><a href="../math/wallis.html"><strong aria-hidden="true">6.5.</strong> 点火</a></li><li class="chapter-item expanded "><a href="../math/triangle_integral.html"><strong aria-hidden="true">6.6.</strong> 其他三角函数分式积分</a></li><li class="chapter-item expanded "><a href="../math/conti_partial_deriv_differentiate.html"><strong aria-hidden="true">6.7.</strong> 连续，偏导，可微</a></li><li class="chapter-item expanded "><a href="../math/implicit_function_partial_derivation.html"><strong aria-hidden="true">6.8.</strong> 隐函数偏导</a></li><li class="chapter-item expanded "><a href="../math/de.html"><strong aria-hidden="true">6.9.</strong> DE</a></li><li class="chapter-item expanded "><a href="../math/subtle.html"><strong aria-hidden="true">6.10.</strong> 一些微妙的问题</a></li><li class="chapter-item expanded "><a href="../math/fact.html"><strong aria-hidden="true">6.11.</strong> 常用事实</a></li><li class="chapter-item expanded "><a href="../math/examples.html"><strong aria-hidden="true">6.12.</strong> 特例</a></li></ol></li><li class="chapter-item expanded "><a href="../CICD/CICD.html"><strong aria-hidden="true">7.</strong> CICD</a></li><li class="chapter-item expanded "><a href="../english/english.html"><strong aria-hidden="true">8.</strong> english</a></li><li class="chapter-item expanded "><a href="../fallback/伤寒杂病论.html"><strong aria-hidden="true">9.</strong> 伤寒杂病论</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fallback/集中注意力.html"><strong aria-hidden="true">9.1.</strong> 集中注意力</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../test/test.html">TEST</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Learning Blogs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="又是-lambda-wip"><a class="header" href="#又是-lambda-wip">又是 lambda (WIP)</a></h1>
+<p>时隔良久，又忙里偷闲捡起来这东西。</p>
+<p>看了<a href="https://thzt.github.io/2017/03/14/recursive-function-7/">这个博客</a>，感觉是很好的补充，又把没理解的东西捡起来试图理解一下。（也是在翻了这作者的博文之后，让我起了好好记录 <code>blog</code> 的念头。</p>
+<h2 id="解方程"><a class="header" href="#解方程">解方程</a></h2>
+<p>对于阶乘函数 <code>fact</code></p>
+<pre><code class="language-haskell">fact :: Int -&gt; Int
+fact n = case n of 
+  1 -&gt; 1
+  n -&gt; n * fact (n-1)
+</code></pre>
+<p>有一个问题是如何只用 lambda 演算来实现 <code>fact</code>。具体一点来说，需要在 <code>fact</code> 内部不能调用 <code>fact</code>  自身。</p>
+<p>一定程度上来说，这个要求是很直观的，因为在函数内部调用 <code>fact</code> 时，<code>fact</code> 自身还没定义完，怎么能够调用它呢？</p>
+<p>在上面提到的博文当中，该文作者视函数定义为一个方程（可能也确实是），<code>fact n</code> 后的等号 <code>=</code>，就是数学意义上的等号，等号两侧完全等价。</p>
+<p>如果能够利用这个方程，直接解出 <code>fact</code> 的定义，那么也就得到了 <code>fact</code> 的定义，绕过了先有鸡还是先有蛋的问题。</p>
+<h2 id="不动点"><a class="header" href="#不动点">不动点</a></h2>
+<p>中学数学里其实很直接少见到递归的概念，偶尔出现也只是出于数列题目，浮光掠影。</p>
+<p>然而哪怕只是很少出现，也有人已经把不动点的概念引入到各种高中教辅书里，配上标题：『不动点法求通项公式』，配图往往有两种，一种是一个螺旋状，另一种是折线。（折线的大概长这样）：</p>
+<pre><code class="language-ascii">       ▲
+       │
+       │
+       │
+       │
+       │                                                 xx
+       │                                                xx               lll
+       │                                              xx         lllllllll
+       │                                           xxx     llllll
+       │                                        xxx lllllll
+       │                                     llllllll
+       │                               lll▲─►l
+       │                         lllll┌───┘x
+       │                     lllll    ▲xxx
+       │                 lll┌────────►┘x
+       │             lllll  ▲      xxx
+       │         lllll      │    xx
+       │     lllll          │  xx
+       lllllll▲─────────────►xx
+lllllll│      │            xx
+l      │      │         xxx
+       │      │       xxx
+       │      │     xxx
+       │      │    xx         y=x
+       │      │  xx
+       │      │xx
+       │     x│x
+       │    xx│
+       │  xx  │
+───────┘xx────┴───────────────────────────────────────────────────────────────►
+      xx
+    xx │
+   x   │
+ xx    │
+</code></pre>
+<p>基本意思就是不动点随着数列趋于极限，将逐步收敛到一个“稳定”的定值。或者干脆就等于这个值，同时因为这个点很“稳定”，于是它不再往外跑，从而得到了一个解。</p>
+<p>那时候的理解很粗糙，没能真正弄懂极限与无穷。但是从利用这个工具解题的过程中还是获得了一点认知：谁掌握了不动点，谁就掌握了整个复杂过程的解。</p>
+<h2 id="方程例子"><a class="header" href="#方程例子">方程例子</a></h2>
+<p>上面提到的 <code>blog</code> 里，作者引用的是函数定义上的不动点，即若 <code>f(x)=x</code>，则 <code>x</code> 是 <code>f</code> 的一个不动点。但我觉得数列的例子可能更像一个算法，于是多写了几笔。</p>
+<p>言归正传。先从阶乘的例子来看 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子怎么用。<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子有这样的性质：</p>
+<pre><code class="language-scheme">Y f = f Y f
+</code></pre>
+<p>也就是说 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子是这样一个高阶函数：对于任意函数 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span></span> 都是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span> 的一个不动点</p>
+<pre><code class="language-scheme">f (Y f) = (Y f) ; 函数作用是右结合的
+</code></pre>
+<p>定义对于阶乘函数 <code>fact</code>，定义一个 <code>mk-fact</code>:</p>
+<pre><code class="language-scheme">(define (mk-fact fact')
+  (lambda (n)
+    (cond
+      ((= n 1) 1)
+      (else (* n (fact' (sub1 n)))))))
+</code></pre>
+<p>我擦，看起来好麻烦，我换个随意点的写法：</p>
+<pre><code class="language-scheme">mk-fact fact' =
+  if n = 1  =&gt; 1
+  else      =&gt; n * (fact' (n-1)) ; 意思到了就行
+</code></pre>
+<p>然后直接将 <code>mk-fact</code> 给 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子：</p>
+<pre><code class="language-scheme">Y mk-fact = mk-fact (Y mk-fact)
+</code></pre>
+<p>接着传递 <code>n</code> 的时候，神奇的事情发生了:</p>
+<pre><code class="language-scheme">(Y mk-fact) n 
+
+-&gt;
+(mk-fact (Y mk-fact)) n
+
+-&gt;
+if n = 1  =&gt; 1
+else      =&gt; n * ((Y mk-fact) (n-1))
+</code></pre>
+<p>如果记 <code>fact = Y mk-fact</code>，则：</p>
+<pre><code class="language-scheme">fact n =
+  if n = 1  =&gt; 1
+  else      =&gt; n * (fact (n-1))
+</code></pre>
+<p>就此得到了阶乘函数 <code>fact</code> 家人们</p>
+<h2 id="y-combinator"><a class="header" href="#y-combinator">Y-combinator</a></h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span></span></span></p>
+<p>这就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子</p>
+<p>随便带入一个 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.5em;vertical-align:-3.5em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4em;"><span style="top:-6.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">→</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">→</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">→</span></span></span><span style="top:-0.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">→</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.5em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4em;"><span style="top:-6.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal" style="margin-right:0.10764em;">ff</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span><span style="top:-0.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord">...</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.5em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">which is exactly </span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>在 <code>apply</code> 一个具体 <code>f</code> 之后，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 组合子变成了类似 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Ω</span></span></span></span> 组合子 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal">xx</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal">xx</span><span class="mclose">)</span></span></span></span> 的东西</p>
+<p>此式永远能继续规约，不能规约到一个 <em>normal form</em>，因而说它是发散的（<em>diverge</em>)</p>
+<p>如果 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 作用于自身，直接代入即有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">YY</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">YYY</span></span></span></span></p>
+<h2 id="回过头来"><a class="header" href="#回过头来">回过头来</a></h2>
+<p>我们总结一下寻找 <code>fact</code> 的过程：</p>
+<p>首先，先把 <code>fact</code> 写出来</p>
+<pre><code class="language-scheme">fact = lambda n.
+  if n = 1 =&gt; 1
+  else =&gt; n * (fact (n-1))
+</code></pre>
+<p>抽象一下，就是写一个函数体里有 <code>fact</code> 递归调用的函数</p>
+<pre><code class="language-scheme">fact = ... fact ...     (1)
+</code></pre>
+<p>然后我们假设 <code>fact</code> 是某个函数 <code>g</code> 的不动点，即 <code>g fact = fact</code></p>
+<p>于是 <code>fact = g fact</code>          (2)</p>
+<p>于是 <code>g fact = ... fact ...</code>  (3)，将 (2) 代回 (1) 即得</p>
+<p>现在又已知 <code>Y</code> 组合子能求出任意函数的不动点，<code>Y g = g Y g</code>  (4)</p>
+<p>于是设 <code>Y g = h</code>，则 <code>g h = h</code>          (5)，带入 (4) 即得</p>
+<p>于是 <code>g h = ... h ...</code>    (6)，将 <code>h</code> 作为 <code>fact</code> 代入 (3) 即得</p>
+<p>于是 <code>h = ... h ...</code>    将 (5) 代回 (6)</p>
+<p>于是解出了阶乘函数（递归函数）<code>h</code></p>
+<p>简直是魔术</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../fp/fp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../algorithm/algorithm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../fp/fp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../algorithm/algorithm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

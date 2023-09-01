@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>questions - Learning Blogs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../from_the_beginning.html">From The Beginning</a></li><li class="chapter-item expanded "><a href="../tls/TLS.html"><strong aria-hidden="true">1.</strong> TLS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tls/racket.html"><strong aria-hidden="true">1.1.</strong> racket</a></li><li class="chapter-item expanded "><a href="../tls/cons_and_list.html"><strong aria-hidden="true">1.2.</strong> cons and list</a></li><li class="chapter-item expanded "><a href="../tls/stars.html"><strong aria-hidden="true">1.3.</strong> stars</a></li><li class="chapter-item expanded "><a href="../tls/shadow.html"><strong aria-hidden="true">1.4.</strong> shadow</a></li><li class="chapter-item expanded "><a href="../tls/friends_and_relations.html"><strong aria-hidden="true">1.5.</strong> friends and relations</a></li><li class="chapter-item expanded "><a href="../tls/abstract_and_continuation.html"><strong aria-hidden="true">1.6.</strong> continuation</a></li><li class="chapter-item expanded "><a href="../tls/halt.html"><strong aria-hidden="true">1.7.</strong> halt</a></li><li class="chapter-item expanded "><a href="../tls/y.html"><strong aria-hidden="true">1.8.</strong> y(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/type.html"><strong aria-hidden="true">1.9.</strong> type(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/lazy.html"><strong aria-hidden="true">1.10.</strong> lazy(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/questions_TLS.html" class="active"><strong aria-hidden="true">1.11.</strong> questions</a></li><li class="chapter-item expanded "><a href="../tls/practice_reverse_list.html"><strong aria-hidden="true">1.12.</strong> (practice)reverse_list</a></li></ol></li><li class="chapter-item expanded "><a href="../cs144/cs144.html"><strong aria-hidden="true">2.</strong> cs144</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cs144/peek.html"><strong aria-hidden="true">2.1.</strong> peek</a></li><li class="chapter-item expanded "><a href="../cs144/send_and_receive.html"><strong aria-hidden="true">2.2.</strong> send and receive</a></li></ol></li><li class="chapter-item expanded "><a href="../fp/fp.html"><strong aria-hidden="true">3.</strong> fp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fp/不动点组合子与阶乘函数.html"><strong aria-hidden="true">3.1.</strong> 不动点组合子与阶乘函数</a></li></ol></li><li class="chapter-item expanded "><a href="../algorithm/algorithm.html"><strong aria-hidden="true">4.</strong> algorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../algorithm/minimum_cut_maximum_flow.html"><strong aria-hidden="true">4.1.</strong> minimum cut maximum flow</a></li><li class="chapter-item expanded "><a href="../algorithm/tarjan.html"><strong aria-hidden="true">4.2.</strong> tarjan</a></li><li class="chapter-item expanded "><a href="../algorithm/monotonic.html"><strong aria-hidden="true">4.3.</strong> monotonic</a></li><li class="chapter-item expanded "><a href="../algorithm/fft.html"><strong aria-hidden="true">4.4.</strong> fft</a></li><li class="chapter-item expanded "><a href="../algorithm/CBA.html"><strong aria-hidden="true">4.5.</strong> CBA</a></li></ol></li><li class="chapter-item expanded "><a href="../concurrency/concurrency.html"><strong aria-hidden="true">5.</strong> concurrency</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concurrency/Mutex_Semaphore_monitor.html"><strong aria-hidden="true">5.1.</strong> Mutex, Semaphore, Monitor</a></li></ol></li><li class="chapter-item expanded "><a href="../math/math.html"><strong aria-hidden="true">6.</strong> math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../math/series.html"><strong aria-hidden="true">6.1.</strong> series</a></li><li class="chapter-item expanded "><a href="../math/taylor.html"><strong aria-hidden="true">6.2.</strong> 泰勒</a></li><li class="chapter-item expanded "><a href="../math/limits.html"><strong aria-hidden="true">6.3.</strong> limit</a></li><li class="chapter-item expanded "><a href="../math/magic_integral.html"><strong aria-hidden="true">6.4.</strong> 神奇积分题</a></li><li class="chapter-item expanded "><a href="../math/wallis.html"><strong aria-hidden="true">6.5.</strong> 点火</a></li><li class="chapter-item expanded "><a href="../math/triangle_integral.html"><strong aria-hidden="true">6.6.</strong> 其他三角函数分式积分</a></li><li class="chapter-item expanded "><a href="../math/conti_partial_deriv_differentiate.html"><strong aria-hidden="true">6.7.</strong> 连续，偏导，可微</a></li><li class="chapter-item expanded "><a href="../math/implicit_function_partial_derivation.html"><strong aria-hidden="true">6.8.</strong> 隐函数偏导</a></li><li class="chapter-item expanded "><a href="../math/de.html"><strong aria-hidden="true">6.9.</strong> DE</a></li><li class="chapter-item expanded "><a href="../math/subtle.html"><strong aria-hidden="true">6.10.</strong> 一些微妙的问题</a></li><li class="chapter-item expanded "><a href="../math/fact.html"><strong aria-hidden="true">6.11.</strong> 常用事实</a></li><li class="chapter-item expanded "><a href="../math/examples.html"><strong aria-hidden="true">6.12.</strong> 特例</a></li></ol></li><li class="chapter-item expanded "><a href="../CICD/CICD.html"><strong aria-hidden="true">7.</strong> CICD</a></li><li class="chapter-item expanded "><a href="../english/english.html"><strong aria-hidden="true">8.</strong> english</a></li><li class="chapter-item expanded "><a href="../fallback/伤寒杂病论.html"><strong aria-hidden="true">9.</strong> 伤寒杂病论</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fallback/集中注意力.html"><strong aria-hidden="true">9.1.</strong> 集中注意力</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../test/test.html">TEST</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Learning Blogs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="questions"><a class="header" href="#questions">questions</a></h1>
+<h2 id="1-explain"><a class="header" href="#1-explain">1. explain</a></h2>
+<pre><code class="language-scheme">&gt; null
+'()
+&gt; '()
+'()
+&gt; (eq? null '())
+#t
+&gt; (eq? 'null ''())
+#f
+</code></pre>
+<h2 id="2-why-not-same"><a class="header" href="#2-why-not-same">2. why not same</a></h2>
+<pre><code class="language-scheme">&gt; (eq? (quote 1) 1)
+#t
+&gt; (eq? (quote a) a)
+#f
+&gt; a
+'()
+&gt; (define y a)
+&gt; (eq? (quote a) y)
+#f
+</code></pre>
+<h2 id="3-litteral"><a class="header" href="#3-litteral">3. litteral?</a></h2>
+<p>能否写一个函数 <code>car l</code>，使其返回 <code>l</code> 的第一个字符？</p>
+<p>不同于 <code>car '(+ 2 3)</code> 会得到 <code>'+</code>，能否有 <code>car1 (+ 2 3)</code> 得到 <code>'+</code>？</p>
+<p>感觉不行，默认是按值传递的。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../tls/lazy.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../tls/practice_reverse_list.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../tls/lazy.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../tls/practice_reverse_list.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
