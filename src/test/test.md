@@ -31,6 +31,14 @@ testing: inline formula: $\int_a^b f(x) dx = F(b) - F(a)$
 
 testing: block formula: $$f g = g f g$$
 
+$$
+\int_0^1x^4 \sqrt{\frac {1+x} {1-x}}dx
+$$
+
+$$
+\lim f(x) - g(x) = g(x) (\frac {f} {g} - 1)
+$$
+
 ## code
 
 ```cpp

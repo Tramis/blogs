@@ -2,13 +2,15 @@
 
 理解 tarjan 和缩点
 
-<img src="./img/tarjan.svg">
+> 写了个证明在知乎：[Tarjan scc 证明](https://zhuanlan.zhihu.com/p/629370905)
+
+<img src="../img/tarjan.svg">
 
 ## tarjan 求强连通分量
 
 理解这个过程的关键在于以 dfs 搜索树和搜索栈的视角来看待图遍历
 
-<img src="./img/tarjan_tree.svg">
+<img src="../img/tarjan_tree.svg">
 
 众所周知 dfs 一个图的过程可以看作一棵树
 
@@ -82,7 +84,7 @@
 
 ---
 
-<img src="./img/tarjan_tree2.svg">
+<img src="../img/tarjan_tree2.svg">
 
 ---
 

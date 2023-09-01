@@ -49,16 +49,16 @@ the ***capacity*** of an *s-t cut* is defined as the sum of the capacity of each
 
 我记得之前看的资料都把这个算法描述为增广的同时添加一条反向边
 
-<img src = "./img/max_flow1.svg" width="45%">
-<img src = "./img/max_flow2.svg" width="45%">
-<img src = "./img/max_flow3.svg" width="45%">
-<img src = "./img/max_flow4.svg" width="45%">
-<img src = "./img/max_flow5.svg" width="45%">
+<img src = "../img/max_flow1.svg" width="45%">
+<img src = "../img/max_flow2.svg" width="45%">
+<img src = "../img/max_flow3.svg" width="45%">
+<img src = "../img/max_flow4.svg" width="45%">
+<img src = "../img/max_flow5.svg" width="45%">
 
 jyy 老师的讲解中增加了一个图解：
 
-<img src = "./img/ford-fulkerson1.svg">
-<img src = "./img/ford-fulkerson2.svg">
+<img src = "../img/ford-fulkerson1.svg">
+<img src = "../img/ford-fulkerson2.svg">
 
 如果把流经一个割两侧的流量之和称为这个割的流量，那么对每一个割来说，每一次增广都一定会增大这个割的流量
 
@@ -73,7 +73,7 @@ jyy 老师的讲解中增加了一个图解：
 - 问: 若一个网络所有割的容量都大于 $0$，则一定可以增广吗？
 - 答: 是的。这个过程很好想象，画图如下：
 
-<img src = "./img/augment_cut_capacity.svg">
+<img src = "../img/augment_cut_capacity.svg">
 
 这个过程中有一个小细节：每一次连接割中两个点 $u, v$，$u$ 并不总是上一次连接进去的点
 
@@ -91,7 +91,7 @@ jyy 老师的讲解中增加了一个图解：
 
 显然，按此割来分割原网络流：
 
-<img src = "./img/a_cut.svg">
+<img src = "../img/a_cut.svg">
 
 不可能有更大的流了，因而得到了最大流
 
