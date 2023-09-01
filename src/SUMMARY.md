@@ -23,11 +23,15 @@
 - [fp](./fp/fp.md)
   - [不动点组合子与阶乘函数](./fp/不动点组合子与阶乘函数.md)
 
-- [Algorithm](./algorithm/algorithm.md)
+- [algorithm](./algorithm/algorithm.md)
   - [minimum cut maximum flow](./algorithm/minimum_cut_maximum_flow.md)
   - [tarjan](./algorithm/tarjan.md)
+  - [monotonic](./algorithm/monotonic.md)
   - [fft](./algorithm/fft.md)
   - [CBA](./algorithm/CBA.md)
+
+- [concurrency](./concurrency/concurrency.md)
+  - [Mutex, Semaphore, Monitor](./concurrency/Mutex_Semaphore_monitor.md)
 
 - [math](./math/math.md)
   - [series](./math/series.md)
@@ -45,7 +49,7 @@
 
 - [CICD](./CICD/CICD.md)
 
-- [English](./english/english.md)
+- [english](./english/english.md)
 
 - [伤寒杂病论](./fallback/伤寒杂病论.md)
   - [集中注意力](./fallback/集中注意力.md)

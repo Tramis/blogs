@@ -22,3 +22,23 @@ f'(0) &= \lim \frac {f(x) - f(0)} {x}\\
 &=g''(0) \lim  \frac {\xi} {x}
 \end{aligned}
 $$
+
+## 嗯凑
+
+$$
+\begin{aligned}
+\int\frac {\cos x} {\cos x + 2\sin x} dx
+&= \int \frac {\cos x - 1/2 \cos x - \sin x} {\cos x + 2\sin x} + \frac 1 2 dx\\
+&=\int \frac {\frac 1 2d(\cos x + 2\sin x)} {\cos x + 2\sin x} + \frac 1 2 x\\
+&=\frac 1 2(\ln (\cos x + 2\sin x) + x ) + C
+\end{aligned}
+$$
+
+## 指数带拖油瓶
+
+$$
+\begin{aligned}
+\int \frac {1+2x} {x^2} e^{-2x}dx
+&= -\int d\frac {e^{-2x}} {x}
+\end{aligned}
+$$
