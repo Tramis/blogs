@@ -29,6 +29,9 @@
   - [monotonic](./algorithm/monotonic.md)
   - [fft](./algorithm/fft.md)
   - [CBA](./algorithm/CBA.md)
+  - [hashmap](./algorithm/hashmap.md)
+  - [huffman](algorithm/huffman.md)
+  - [LIS](algorithm/LIS.md)
 
 - [concurrency](./concurrency/concurrency.md)
   - [Mutex, Semaphore, Monitor](./concurrency/Mutex_Semaphore_monitor.md)
@@ -45,7 +48,9 @@
   - [DE](./math/de.md)
   - [一些微妙的问题](./math/subtle.md)
   - [常用事实](./math/fact.md)
+  - [一些有点抽象的解法](./math/abstract_solution.md)
   - [特例](./math/examples.md)
+  - [曲线积分😋](./math/curve_integral.md)
 
 - [CICD](./CICD/CICD.md)
 
