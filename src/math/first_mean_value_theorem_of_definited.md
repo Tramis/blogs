@@ -27,7 +27,3 @@ f(\xi) \int_a^b g(x)dx = \int_a^b f(x)g(x)dx
 $$
 
 得证
-
-$$
-f'(x) = \frac 1 {}
-$$

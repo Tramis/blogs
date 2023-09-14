@@ -2,7 +2,7 @@
 
 lab0 的第一部分是模仿 `telnet` 的操作，用它给的 `socket` 实现去进行一个 `http` 的 `GET` 请求
 
-![socket read and write](img/socket.svg)
+![socket read and write](../img/socket.svg)
 
 每个 `socket` 都在 `write` 对面和 `read` 自己，这与后面实现的 `StreamBytes` 类不同
 
