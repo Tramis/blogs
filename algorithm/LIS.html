@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>LIS - Learning Blogs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../from_the_beginning.html">From The Beginning</a></li><li class="chapter-item expanded "><a href="../tls/TLS.html"><strong aria-hidden="true">1.</strong> TLS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tls/racket.html"><strong aria-hidden="true">1.1.</strong> racket</a></li><li class="chapter-item expanded "><a href="../tls/cons_and_list.html"><strong aria-hidden="true">1.2.</strong> cons and list</a></li><li class="chapter-item expanded "><a href="../tls/stars.html"><strong aria-hidden="true">1.3.</strong> stars</a></li><li class="chapter-item expanded "><a href="../tls/shadow.html"><strong aria-hidden="true">1.4.</strong> shadow</a></li><li class="chapter-item expanded "><a href="../tls/friends_and_relations.html"><strong aria-hidden="true">1.5.</strong> friends and relations</a></li><li class="chapter-item expanded "><a href="../tls/abstract_and_continuation.html"><strong aria-hidden="true">1.6.</strong> continuation</a></li><li class="chapter-item expanded "><a href="../tls/halt.html"><strong aria-hidden="true">1.7.</strong> halt</a></li><li class="chapter-item expanded "><a href="../tls/y.html"><strong aria-hidden="true">1.8.</strong> y(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/type.html"><strong aria-hidden="true">1.9.</strong> type(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/lazy.html"><strong aria-hidden="true">1.10.</strong> lazy(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/questions_TLS.html"><strong aria-hidden="true">1.11.</strong> questions</a></li><li class="chapter-item expanded "><a href="../tls/practice_reverse_list.html"><strong aria-hidden="true">1.12.</strong> (practice)reverse_list</a></li></ol></li><li class="chapter-item expanded "><a href="../cs144/cs144.html"><strong aria-hidden="true">2.</strong> cs144</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cs144/peek.html"><strong aria-hidden="true">2.1.</strong> peek</a></li><li class="chapter-item expanded "><a href="../cs144/send_and_receive.html"><strong aria-hidden="true">2.2.</strong> send and receive</a></li></ol></li><li class="chapter-item expanded "><a href="../fp/fp.html"><strong aria-hidden="true">3.</strong> fp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fp/不动点组合子与阶乘函数.html"><strong aria-hidden="true">3.1.</strong> 不动点组合子与阶乘函数</a></li></ol></li><li class="chapter-item expanded "><a href="../algorithm/algorithm.html"><strong aria-hidden="true">4.</strong> algorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../algorithm/minimum_cut_maximum_flow.html"><strong aria-hidden="true">4.1.</strong> minimum cut maximum flow</a></li><li class="chapter-item expanded "><a href="../algorithm/tarjan.html"><strong aria-hidden="true">4.2.</strong> tarjan</a></li><li class="chapter-item expanded "><a href="../algorithm/monotonic.html"><strong aria-hidden="true">4.3.</strong> monotonic</a></li><li class="chapter-item expanded "><a href="../algorithm/fft.html"><strong aria-hidden="true">4.4.</strong> fft</a></li><li class="chapter-item expanded "><a href="../algorithm/CBA.html"><strong aria-hidden="true">4.5.</strong> CBA</a></li><li class="chapter-item expanded "><a href="../algorithm/hashmap.html"><strong aria-hidden="true">4.6.</strong> hashmap</a></li><li class="chapter-item expanded "><a href="../algorithm/huffman.html"><strong aria-hidden="true">4.7.</strong> huffman</a></li><li class="chapter-item expanded "><a href="../algorithm/LIS.html" class="active"><strong aria-hidden="true">4.8.</strong> LIS</a></li></ol></li><li class="chapter-item expanded "><a href="../concurrency/concurrency.html"><strong aria-hidden="true">5.</strong> concurrency</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concurrency/Mutex_Semaphore_monitor.html"><strong aria-hidden="true">5.1.</strong> Mutex, Semaphore, Monitor</a></li></ol></li><li class="chapter-item expanded "><a href="../math/math.html"><strong aria-hidden="true">6.</strong> math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../math/series.html"><strong aria-hidden="true">6.1.</strong> series</a></li><li class="chapter-item expanded "><a href="../math/taylor.html"><strong aria-hidden="true">6.2.</strong> 泰勒</a></li><li class="chapter-item expanded "><a href="../math/limits.html"><strong aria-hidden="true">6.3.</strong> limit</a></li><li class="chapter-item expanded "><a href="../math/magic_integral.html"><strong aria-hidden="true">6.4.</strong> 神奇积分题</a></li><li class="chapter-item expanded "><a href="../math/wallis.html"><strong aria-hidden="true">6.5.</strong> 点火</a></li><li class="chapter-item expanded "><a href="../math/triangle_integral.html"><strong aria-hidden="true">6.6.</strong> 其他三角函数分式积分</a></li><li class="chapter-item expanded "><a href="../math/conti_partial_deriv_differentiate.html"><strong aria-hidden="true">6.7.</strong> 连续，偏导，可微</a></li><li class="chapter-item expanded "><a href="../math/implicit_function_partial_derivation.html"><strong aria-hidden="true">6.8.</strong> 隐函数偏导</a></li><li class="chapter-item expanded "><a href="../math/de.html"><strong aria-hidden="true">6.9.</strong> DE</a></li><li class="chapter-item expanded "><a href="../math/subtle.html"><strong aria-hidden="true">6.10.</strong> 一些微妙的问题</a></li><li class="chapter-item expanded "><a href="../math/fact.html"><strong aria-hidden="true">6.11.</strong> 常用事实</a></li><li class="chapter-item expanded "><a href="../math/abstract_solution.html"><strong aria-hidden="true">6.12.</strong> 一些有点抽象的解法</a></li><li class="chapter-item expanded "><a href="../math/examples.html"><strong aria-hidden="true">6.13.</strong> 特例</a></li><li class="chapter-item expanded "><a href="../math/curve_integral.html"><strong aria-hidden="true">6.14.</strong> 曲线积分😋</a></li></ol></li><li class="chapter-item expanded "><a href="../CICD/CICD.html"><strong aria-hidden="true">7.</strong> CICD</a></li><li class="chapter-item expanded "><a href="../english/english.html"><strong aria-hidden="true">8.</strong> english</a></li><li class="chapter-item expanded "><a href="../fallback/伤寒杂病论.html"><strong aria-hidden="true">9.</strong> 伤寒杂病论</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fallback/集中注意力.html"><strong aria-hidden="true">9.1.</strong> 集中注意力</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../test/test.html">TEST</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Learning Blogs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="导弹拦截和二维偏序"><a class="header" href="#导弹拦截和二维偏序">导弹拦截和二维偏序</a></h1>
+<blockquote>
+<p>某国为了防御敌国的导弹袭击，发展出一种导弹拦截系统。但是这种导弹拦截系统有一个缺陷：虽然它的第一发炮弹能够到达任意的高度，但是以后每一发炮弹都不能高于前一发的高度。某天，雷达捕捉到敌国的导弹来袭。由于该系统还在试用阶段，所以只有一套系统，因此有可能不能拦截所有的导弹。</p>
+<p>输入导弹依次飞来的高度，计算这套系统最多能拦截多少导弹，如果要拦截所有导弹最少要配备多少套这种导弹拦截系统。</p>
+<pre><code class="language-bash">input: 
+389 207 155 300 299 170 158 65
+
+output : 
+6
+2
+</code></pre>
+</blockquote>
+<p>导弹之间形成了一个二维偏序关系，两个维度分别为发射时间先后和高度 <code>(time, height)</code></p>
+<p>分别以其为横轴和纵轴可以画出下图：</p>
+<pre><code class="language-ascii">   ▲
+   │
+   │                                              │
+   │        ▼ 399                                 │
+   │                         ▼ 300                │
+   │                            ▼ 299             │
+   │             ▼ 207                            │
+   │                                 ▼ 170        │
+   │                                     ▼ 158    │
+   │                  ▼ 155                       │
+   │   ───────────────────────────────────────────┼────
+   │                                              │ ▼ 65
+   └───────────────────────────────────────────────────────────────►
+</code></pre>
+<p>可以看出假如不保留足够的信息，无法区分 <code>65</code> 这个导弹的上家是拦截 <code>155</code> 还是 <code>158</code> 更好，因而这里不能考虑贪心</p>
+<h2 id="朴素-dp"><a class="header" href="#朴素-dp">朴素 <code>dp</code></a></h2>
+<p>迭代到 <code>65</code> 时，不会考虑此前高度小于 <code>65</code> 的导弹，也不会考虑在 <code>65</code> 之后才要拦截的导弹，因而只需要考察上方图中 <code>65</code> <strong>左上侧</strong>的导弹</p>
+<p>于是有一个很简单的 <code>dp</code> 思路：以 <code>dp1[i]</code> 表示拦截第 <code>i</code> 个导弹的最长序列长度，则</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">p</span><span class="mord">1</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord mathnormal">d</span><span class="mord mathnormal">p</span><span class="mord">1</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mspace"> </span><span class="mord">∣</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">height[j]</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">height[i]</span></span><span class="mclose">}</span></span></span></span></span></p>
+<h2 id="树状数组"><a class="header" href="#树状数组">树状数组</a></h2>
+<p>可以看到，如果能够考虑从 <code>158</code> 这个导弹接龙，则一定不用考虑从 <code>170</code> 这个导弹接龙，因为 <code>170</code> 在 <code>158</code> 的<strong>左上侧</strong></p>
+<p>这说明有重复信息可以利用，有优化空间</p>
+<p>重新审查迭代过程，发现可以通过维护一个区间的值来利用这个信息：</p>
+<p>当 <code>155</code> 高度的导弹迭代完成时，以其结尾的导弹序列长度为 <code>dp2[155]</code>，则此后高度在 <code>[1, 155]</code> 之间的导弹，起码能成为长度 <code>dp2[155] + 1</code> 的导弹序列结尾</p>
+<p>因此，通过维护 <code>[1, height[i]]</code> 的区间最大值，可以立刻得到新导弹能接上的最长序列</p>
+<p>可以通过树状数组来维护这样的区间值</p>
+<h2 id="单调性"><a class="header" href="#单调性">单调性</a></h2>
+<p>可以看出，上方树状数组的做法中，若以 <code>max[i]</code> 表示 <code>[1, i]</code> 的区间最大值，则其是一个单调不增序列，这是由它的定义决定的</p>
+<p>其实这里已经没有什么优化空间了，因为维护这样的区间最值，基本上也就是树状数组这个数据结构的最大能力了</p>
+<p>其他题解不用树状数组的，基本上都是利用了这个单调性：</p>
+<!-- 
+以 `dp3[i]` 表示长为 `i` 的序列最终结尾的导弹高度，则任何 `dp3[i]` 都希望自己的值越大越好 -->
+<p>回过头来看上面的二维偏序图，不能仅仅维护图中的凸包络面：</p>
+<pre><code class="language-ascii">  ▲
+  │        ▼
+  │                              ▼
+  │                      ▼    ▼    x
+  │           ▼    ▼   ▼  ▼      x
+  │                      ▼
+  │               ▼
+  │                  ▼       y
+  │       ▼       ▼     ▼      x4
+  │ ▼    
+  │    ▼
+  │             x3
+  │          x2
+  │  x1
+  │                                          A
+──┴─────────────────────────────────────────────────────────►
+</code></pre>
+<p>图中迭代到 <code>A</code> 时，不能仅考察标为 <code>x</code> 的所有点，<strong>尽管</strong>其余所有点都包络在这些点的<strong>左上侧</strong>。（反例是接下来来了一个高度在 <code>[x4, y]</code> 之间的点）</p>
+<p>实际上，所有在 “最右侧” 的点，都应该维护，唯一能保证可以丢弃的只有高度相同的点：</p>
+<pre><code class="language-ascii">  ▲
+  │        x
+  │                              x
+  │                      ▼    ▼    x
+  │           ▼    ▼   ▼  ▼      x
+  │                      x
+  │               x
+  │                  ▼       x
+  │       ▼       ▼     ▼      x4
+  │ x    
+  │    x
+  │             x3
+  │          x2
+  │  x1
+  │                                          A
+──┴─────────────────────────────────────────────────────────►
+</code></pre>
+<blockquote>
+<p>（所有标为 <code>x</code> 的点，接下来都有可能用到）</p>
+</blockquote>
+<p>与此同时，这些点当中也有点可以不必维护：比如 <code>x1, x2, x3</code> 的最长导弹拦截序列都是 <code>2</code>，假如</p>
+<ol>
+<li><code>A</code> 同时小于这三者，则这三者对于 <code>A</code> 来说是等价的</li>
+<li>但如果 <code>A</code> 小于 <code>x3</code> 却大于 <code>x2</code>，则只需要考虑 <code>x3</code>，而不必考虑 <code>x1, x2</code></li>
+</ol>
+<p>因此，<code>x3</code> 是一定要保留的，而 <code>x1, x2</code> 却是可有可无的，综上，在这条包络线当中，对于最长序列长度相等的点，只需维护其中高度最高的点</p>
+<p>或者，由于题目没有要求输出具体点，因而只需要维护最高高度，而不必关注具体是哪个点</p>
+<p>于是仅仅需要维护 <code>dp3[i]</code> 表示长为 <code>i</code> 的拦截序列的尾部最大高度。这已经是需要维护的最少的信息</p>
+<p>可以看出这个信息与上方树状数组中单调性等价：其实质是维护区间最大值的端点</p>
+<p>同样可以看出，随着迭代过程，对于任意长度 <code>i</code>，<code>dp3[i]</code> 是只增不减的，这对应了上方树状数组的区间端点只增不减</p>
+<h2 id="第二问"><a class="header" href="#第二问">第二问</a></h2>
+<p>据说有 <code>Dilworth</code> 定理，其在此题中的体现是：</p>
+<p>将一个序列剖成若干个单调不升子序列的最小个数等于该序列最长上升子序列的个数</p>
+<p>我这里是直接贪心</p>
+<h2 id="代码树状数组"><a class="header" href="#代码树状数组">代码（树状数组）</a></h2>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;vector&gt;
+
+const int MAX_VALUE = 5e4 + 50;
+
+template &lt;std::size_t N&gt; struct BIT {
+  int c[N] = {0};
+
+  static inline int lowbit(const int x) { return x &amp; -x; }
+
+  /// update value in [1, i] with n
+  void update(int n, int i) {
+    while (i &gt; 0 &amp;&amp; c[i] &lt; n) {
+      c[i] = n;
+      i -= lowbit(i);
+    }
+  }
+
+  int get(int i) {
+    int ans = 0;
+    while (i &lt;= N) {
+      ans = std::max(ans, c[i]);
+      i += lowbit(i);
+    }
+    return ans;
+  }
+};
+
+int main() {
+  int n = 0;
+
+  int a[(int)1e5 + 50];
+
+  while (std::cin &gt;&gt; a[n++]) {
+  };
+  n -= 1;
+
+  if (n == 0) {
+    std::cout &lt;&lt; &quot;0\n0&quot; &lt;&lt; std::endl;
+    return 0;
+  }
+
+  auto bit = BIT&lt;MAX_VALUE&gt;{};
+
+  for (int i = 0; i &lt; n; i++) {
+    bit.update(bit.get(a[i]) + 1, a[i]);
+  }
+
+  auto v2 = std::vector&lt;int&gt;{a[0]};
+
+  for (int i = 1; i &lt; n; i++) {
+    auto tmp = std::lower_bound(v2.begin(), v2.end(), a[i]);
+    if (tmp == v2.end()) {
+      v2.push_back(a[i]);
+    } else {
+      *tmp = a[i];
+    }
+  }
+
+  std::cout &lt;&lt; bit.get(1) &lt;&lt; std::endl &lt;&lt; v2.size();
+
+  return 0;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../algorithm/huffman.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../concurrency/concurrency.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../algorithm/huffman.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../concurrency/concurrency.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
