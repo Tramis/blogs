@@ -51,6 +51,7 @@
   - [一些有点抽象的解法](./math/abstract_solution.md)
   - [特例](./math/examples.md)
   - [曲线积分😋](./math/curve_integral.md)
+  - [最小二乘](./math/least_square.md)
 
 - [CICD](./CICD/CICD.md)
 
