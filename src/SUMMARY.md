@@ -56,8 +56,10 @@
 
 - [english](./english/english.md)
 
+- [AI](./dl/softmax.md)
+<!-- 
 - [伤寒杂病论](./fallback/伤寒杂病论.md)
-  - [集中注意力](./fallback/集中注意力.md)
+  - [集中注意力](./fallback/集中注意力.md) -->
 
 ---
 
