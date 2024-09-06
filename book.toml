@@ -8,6 +8,7 @@ title = "Learning Blogs"
 
 [preprocessor.katex]
 after = ["links"]
+output = "html"
 
 # [output.html]
 # mathjax-support = true

@@ -39,6 +39,15 @@ $$
 \lim f(x) - g(x) = g(x) (\frac {f} {g} - 1)
 $$
 
+test matrix:
+
+$$
+\begin{matrix}
+   a & b \\
+   c & d
+\end{matrix}
+$$
+
 ## code
 
 ```cpp
