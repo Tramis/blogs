@@ -63,6 +63,7 @@
   - [分块矩阵](./math/分块矩阵.md)
   - [线性微分方程](./math/线性微分方程.md)
   - [最小二乘](./math/least_square.md)
+  - [假设检验](./math/假设检验.md)
 
 - [CICD](./CICD/CICD.md)
 
