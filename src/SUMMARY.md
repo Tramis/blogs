@@ -37,6 +37,7 @@
   - [Mutex, Semaphore, Monitor](./concurrency/Mutex_Semaphore_monitor.md)
 
 - [math](./math/math.md)
+  - [指数的泰勒级数收敛到原函数](./math/指数的泰勒级数收敛到原函数.md)
   - [jacobi行列式和隐函数存在](./math/jacobi.md)
   - [隐函数偏导](./math/implicit_function_partial_derivation.md)
   - [连续，偏导，可微](./math/conti_partial_deriv_differentiate.md)
