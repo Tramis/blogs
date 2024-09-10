@@ -20,6 +20,10 @@
   - [peek](./cs144/peek.md)
   - [send and receive](./cs144/send_and_receive.md)
 
+- [os](./os/os.md)
+  - [2.批处理系统](./os/2.批处理系统.md)
+  - [3.分时系统](./os/3.分时系统.md)
+
 - [fp](./fp/fp.md)
   - [不动点组合子与阶乘函数](./fp/不动点组合子与阶乘函数.md)
 
