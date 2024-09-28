@@ -45,6 +45,7 @@
   - [jacobi行列式和隐函数存在](./math/jacobi.md)
   - [隐函数偏导](./math/implicit_function_partial_derivation.md)
   - [连续，偏导，可微](./math/conti_partial_deriv_differentiate.md)
+  - [仅求单个偏导](./math/仅求单个偏导.md)
   - [泰勒](./math/taylor.md)
   - [积分中值](./math/first_mean_value_theorem_of_definited.md)
   - [一些极限题目](./math/limits.md)
