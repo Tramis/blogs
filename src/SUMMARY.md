@@ -59,6 +59,8 @@
   - [曲面面积投影积分](./math/曲面面积投影积分.md)
   - [投影柱面的联立和消元](./math/project_cylinder.md)
   - [极坐标下图形绕极轴旋转的体积](./math/volumn_of_revolution.md)
+  - [拉格朗日乘数](./math/拉格朗日乘数法.md)
+  - [梯度和法向量](./math/梯度和法向量.md)
   - [格林，高斯，斯托克斯](./math/green_gauss_stokes.md)
   - [级数](./math/series.md)
   - [一些微妙的问题](./math/subtle.md)
