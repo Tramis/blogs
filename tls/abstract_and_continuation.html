@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh" class="light" dir="ltr">
+<html lang="zh" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -24,26 +24,41 @@
         <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
-        <!-- Provide site root to javascript -->
-        <script>
-            var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
 
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -57,70 +72,51 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../from_the_beginning.html">From The Beginning</a></li><li class="chapter-item expanded "><a href="../tls/TLS.html"><strong aria-hidden="true">1.</strong> TLS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tls/racket.html"><strong aria-hidden="true">1.1.</strong> racket</a></li><li class="chapter-item expanded "><a href="../tls/cons_and_list.html"><strong aria-hidden="true">1.2.</strong> cons and list</a></li><li class="chapter-item expanded "><a href="../tls/stars.html"><strong aria-hidden="true">1.3.</strong> stars</a></li><li class="chapter-item expanded "><a href="../tls/shadow.html"><strong aria-hidden="true">1.4.</strong> shadow</a></li><li class="chapter-item expanded "><a href="../tls/friends_and_relations.html"><strong aria-hidden="true">1.5.</strong> friends and relations</a></li><li class="chapter-item expanded "><a href="../tls/abstract_and_continuation.html" class="active"><strong aria-hidden="true">1.6.</strong> continuation</a></li><li class="chapter-item expanded "><a href="../tls/halt.html"><strong aria-hidden="true">1.7.</strong> halt</a></li><li class="chapter-item expanded "><a href="../tls/y.html"><strong aria-hidden="true">1.8.</strong> y(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/type.html"><strong aria-hidden="true">1.9.</strong> type(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/lazy.html"><strong aria-hidden="true">1.10.</strong> lazy(WIP)</a></li><li class="chapter-item expanded "><a href="../tls/questions_TLS.html"><strong aria-hidden="true">1.11.</strong> questions</a></li><li class="chapter-item expanded "><a href="../tls/practice_reverse_list.html"><strong aria-hidden="true">1.12.</strong> (practice)reverse_list</a></li></ol></li><li class="chapter-item expanded "><a href="../cs144/cs144.html"><strong aria-hidden="true">2.</strong> cs144</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cs144/peek.html"><strong aria-hidden="true">2.1.</strong> peek</a></li><li class="chapter-item expanded "><a href="../cs144/send_and_receive.html"><strong aria-hidden="true">2.2.</strong> send and receive</a></li></ol></li><li class="chapter-item expanded "><a href="../os/os.html"><strong aria-hidden="true">3.</strong> os</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../os/2.批处理系统.html"><strong aria-hidden="true">3.1.</strong> 2.批处理系统</a></li><li class="chapter-item expanded "><a href="../os/3.分时系统.html"><strong aria-hidden="true">3.2.</strong> 3.分时系统</a></li></ol></li><li class="chapter-item expanded "><a href="../fp/fp.html"><strong aria-hidden="true">4.</strong> fp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fp/不动点组合子与阶乘函数.html"><strong aria-hidden="true">4.1.</strong> 不动点组合子与阶乘函数</a></li></ol></li><li class="chapter-item expanded "><a href="../algorithm/algorithm.html"><strong aria-hidden="true">5.</strong> algorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../algorithm/minimum_cut_maximum_flow.html"><strong aria-hidden="true">5.1.</strong> minimum cut maximum flow</a></li><li class="chapter-item expanded "><a href="../algorithm/tarjan.html"><strong aria-hidden="true">5.2.</strong> tarjan</a></li><li class="chapter-item expanded "><a href="../algorithm/monotonic.html"><strong aria-hidden="true">5.3.</strong> monotonic</a></li><li class="chapter-item expanded "><a href="../algorithm/fft.html"><strong aria-hidden="true">5.4.</strong> fft</a></li><li class="chapter-item expanded "><a href="../algorithm/CBA.html"><strong aria-hidden="true">5.5.</strong> CBA</a></li><li class="chapter-item expanded "><a href="../algorithm/hashmap.html"><strong aria-hidden="true">5.6.</strong> hashmap</a></li><li class="chapter-item expanded "><a href="../algorithm/huffman.html"><strong aria-hidden="true">5.7.</strong> huffman</a></li><li class="chapter-item expanded "><a href="../algorithm/LIS.html"><strong aria-hidden="true">5.8.</strong> LIS</a></li></ol></li><li class="chapter-item expanded "><a href="../concurrency/concurrency.html"><strong aria-hidden="true">6.</strong> concurrency</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concurrency/Mutex_Semaphore_monitor.html"><strong aria-hidden="true">6.1.</strong> Mutex, Semaphore, Monitor</a></li></ol></li><li class="chapter-item expanded "><a href="../math/math.html"><strong aria-hidden="true">7.</strong> math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../math/指数的泰勒级数收敛到原函数.html"><strong aria-hidden="true">7.1.</strong> 指数的泰勒级数收敛到原函数</a></li><li class="chapter-item expanded "><a href="../math/jacobi.html"><strong aria-hidden="true">7.2.</strong> jacobi行列式和隐函数存在</a></li><li class="chapter-item expanded "><a href="../math/implicit_function_partial_derivation.html"><strong aria-hidden="true">7.3.</strong> 隐函数偏导</a></li><li class="chapter-item expanded "><a href="../math/conti_partial_deriv_differentiate.html"><strong aria-hidden="true">7.4.</strong> 连续，偏导，可微</a></li><li class="chapter-item expanded "><a href="../math/仅求单个偏导.html"><strong aria-hidden="true">7.5.</strong> 仅求单个偏导</a></li><li class="chapter-item expanded "><a href="../math/taylor.html"><strong aria-hidden="true">7.6.</strong> 泰勒</a></li><li class="chapter-item expanded "><a href="../math/first_mean_value_theorem_of_definited.html"><strong aria-hidden="true">7.7.</strong> 积分中值</a></li><li class="chapter-item expanded "><a href="../math/limits.html"><strong aria-hidden="true">7.8.</strong> 一些极限题目</a></li><li class="chapter-item expanded "><a href="../math/infinity_small.html"><strong aria-hidden="true">7.9.</strong> 同阶无穷小的归化</a></li><li class="chapter-item expanded "><a href="../math/de.html"><strong aria-hidden="true">7.10.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="../math/magic_integral.html"><strong aria-hidden="true">7.11.</strong> 神奇积分题</a></li><li class="chapter-item expanded "><a href="../math/wallis.html"><strong aria-hidden="true">7.12.</strong> 点火</a></li><li class="chapter-item expanded "><a href="../math/triangle_integral.html"><strong aria-hidden="true">7.13.</strong> 其他三角函数分式积分</a></li><li class="chapter-item expanded "><a href="../math/curve_integral.html"><strong aria-hidden="true">7.14.</strong> 曲线积分😋</a></li><li class="chapter-item expanded "><a href="../math/曲面积分.html"><strong aria-hidden="true">7.15.</strong> 曲面积分</a></li><li class="chapter-item expanded "><a href="../math/曲面面积投影积分.html"><strong aria-hidden="true">7.16.</strong> 曲面面积投影积分</a></li><li class="chapter-item expanded "><a href="../math/project_cylinder.html"><strong aria-hidden="true">7.17.</strong> 投影柱面的联立和消元</a></li><li class="chapter-item expanded "><a href="../math/volumn_of_revolution.html"><strong aria-hidden="true">7.18.</strong> 极坐标下图形绕极轴旋转的体积</a></li><li class="chapter-item expanded "><a href="../math/拉格朗日乘数法.html"><strong aria-hidden="true">7.19.</strong> 拉格朗日乘数</a></li><li class="chapter-item expanded "><a href="../math/梯度和法向量.html"><strong aria-hidden="true">7.20.</strong> 梯度和法向量</a></li><li class="chapter-item expanded "><a href="../math/green_gauss_stokes.html"><strong aria-hidden="true">7.21.</strong> 格林，高斯，斯托克斯</a></li><li class="chapter-item expanded "><a href="../math/series.html"><strong aria-hidden="true">7.22.</strong> 级数</a></li><li class="chapter-item expanded "><a href="../math/subtle.html"><strong aria-hidden="true">7.23.</strong> 一些微妙的问题</a></li><li class="chapter-item expanded "><a href="../math/fact.html"><strong aria-hidden="true">7.24.</strong> 常用事实</a></li><li class="chapter-item expanded "><a href="../math/abstract_solution.html"><strong aria-hidden="true">7.25.</strong> 一些有点抽象的解法</a></li><li class="chapter-item expanded "><a href="../math/examples.html"><strong aria-hidden="true">7.26.</strong> 特例</a></li><li class="chapter-item expanded "><a href="../math/floor_and_ceil.html"><strong aria-hidden="true">7.27.</strong> 向上向下取整</a></li><li class="chapter-item expanded "><a href="../math/分块矩阵.html"><strong aria-hidden="true">7.28.</strong> 分块矩阵</a></li><li class="chapter-item expanded "><a href="../math/线性微分方程.html"><strong aria-hidden="true">7.29.</strong> 线性微分方程</a></li><li class="chapter-item expanded "><a href="../math/least_square.html"><strong aria-hidden="true">7.30.</strong> 最小二乘</a></li><li class="chapter-item expanded "><a href="../math/假设检验.html"><strong aria-hidden="true">7.31.</strong> 假设检验</a></li></ol></li><li class="chapter-item expanded "><a href="../CICD/CICD.html"><strong aria-hidden="true">8.</strong> CICD</a></li><li class="chapter-item expanded "><a href="../english/english.html"><strong aria-hidden="true">9.</strong> english</a></li><li class="chapter-item expanded "><a href="../dl/softmax.html"><strong aria-hidden="true">10.</strong> AI</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../test/test.html">TEST</a></li></ol>
-            </div>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
-
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -130,13 +126,14 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -153,7 +150,12 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -420,6 +422,7 @@
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>
